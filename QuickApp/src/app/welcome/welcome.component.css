@@ -1,0 +1,30 @@
+.intro-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: black; /* Black background */
+    color: white; /* White text color */
+    text-align: center;
+}
+
+.intro-screen h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.intro-screen button {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    color: black;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.intro-screen button:hover {
+    background-color: grey;
+    color: white;
+}
