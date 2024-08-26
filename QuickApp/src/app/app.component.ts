@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'QuickApp';
+  isIntroPage: boolean = false;
+
+  constructor(private router: Router) {
+    // Check the current route and update `isIntroPage`
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.isIntroPage = this.router.url === '/welcome';
+      }
+    });
+  }
 }
