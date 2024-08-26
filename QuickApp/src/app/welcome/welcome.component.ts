@@ -1,28 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Renderer2, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
-  styleUrl: './welcome.component.css'
+  styleUrls: ['./welcome.component.css']
 })
-export class WelcomeComponent {
+export class WelcomeComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor(private renderer: Renderer2, @Inject(PLATFORM_ID) private platformId: Object,private router: Router) {}
+
+  ngOnInit(): void {
+
+    if (isPlatformBrowser(this.platformId)) {
+      // Execute only in the browser
+      const modalElement = document.getElementById('initialTerrence');
+      if (modalElement) {
+        const bootstrapModal = new (window as any).bootstrap.Modal(modalElement, {
+          keyboard: false // Optional: disable closing with the keyboard
+        });
+        bootstrapModal.show();
+      }
+    }
+  }
+  
 
   navigateToHome() {
     this.router.navigate(['/home']);
   }
-  isPopupVisible = false;
-
-  showPopup() {
-    console.log("Popup should be visible now");
-    this.isPopupVisible = true;
-  }
-  
-  hidePopup() {
-    console.log("Popup should be hidden now");
-    this.isPopupVisible = false;
-  }
-  
 }

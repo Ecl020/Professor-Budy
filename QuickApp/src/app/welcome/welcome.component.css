@@ -17,97 +17,30 @@
    
     /* Ensure padding is included in width and height calculations */
 }
-.greeting-wrapper {
-    position: absolute; /* Position it relative to the nearest positioned ancestor (intro-screen) */
-    left: 90px; /* Aligns it to the left side of the screen */
-    top: 50%; /* Center it vertically relative to its height */
-    transform: translateY(-50%); /* Adjust vertical alignment */
-    display: flex;
-    align-items: flex-start; /* Align items to the top */
+.popup-content {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
 }
-
-
-.image-container {
-    margin-right: -150px; /* Adjust space between the image and the speech bubble */
-}
-
 .greeting-image {
-    width: 400px; /* Adjust the size as needed */
-}
-.greeting-container {
-    position: relative; /* Position relative to move the speech bubble */
-    top: 0px; /* Move the speech bubble up by 20px; adjust as needed */
+  width: 350px; /* Further reduce image size */
 }
 
-.intro-screen h1 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
+.speech-bubble-container {
+  margin-right: -100px; /* Space between the speech bubble and the image */
+  margin-top: 0;  /* Adjust this value to raise the speech bubble higher */
 }
 
-.intro-screen button {
-    padding: 1rem 2rem;
-    font-size: 1.25rem;
-    color: black;
-    background-color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.intro-screen button:hover {
-    background-color: grey;
-    color: white;
-}
 @media (max-width: 1075px) {
-    .greeting-wrapper {
-        left: 10px; /* Adjust left positioning */
-        flex-direction: column; /* Stack items vertically on smaller screens */
-    }
-   
-
     .greeting-image {
         width: 350px; /* Further reduce image size */
     }
-    .greeting-container {
-        position: relative; /* Position relative to move the speech bubble */
-        top: -320px;
-        right: -240px; /* Move the speech bubble up by 20px; adjust as needed */
-    }
-
-    .intro-screen h1 {
-        font-size: 1.5rem; /* Further reduce font size */
-        margin-bottom: 1rem; /* Further reduce margin */
-    }
-
-    .intro-screen button {
-        padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
-        font-size: 0.875rem; /* Adjust font size for better readability */
-    }
 }
 @media (max-width: 650px) {
-    .greeting-wrapper {
-        left: 0; /* Adjust left positioning for very small screens */
-    }
-    .greeting-container {
-        position: relative; /* Position relative to move the speech bubble */
-        top: -250px;
-        right: -140px; /* Move the speech bubble up by 20px; adjust as needed */
-    }
-
     .greeting-image {
-        width: 200px; /* Further reduce image size */
-    }
-
-    .intro-screen h1 {
-        font-size: 1.25rem; /* Further reduce font size */
-        margin-bottom: 1rem; /* Further reduce margin */
-    }
-
-    .intro-screen button {
-        padding: 0.5rem 0.75rem; /* Adjust padding for very small screens */
-        font-size: 0.75rem; /* Adjust font size for better readability */
+        width: 350px; /* Further reduce image size */
     }
 }
+
 
 
 [speech-bubble], [speech-bubble] * { box-sizing: border-box }

@@ -24,7 +24,7 @@
                                                         <span class="icon">
                                                             <i class="fa fa-universal-access"></i>
                                                         </span>
-                                                        <span class="title" (click)="navigateToHome()">Welcome</span>
+                                                        <span class="title" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Welcome</span>
                                                     </span>
                                                     <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
                                                 </a>
@@ -45,7 +45,7 @@
                                                         <span class="icon">
                                                             <i class="fa fa-bullseye"></i>
                                                         </span>
-                                                        <span class="title"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">About</span>
+                                                        <span class="title">Scams</span>
                                                     </span>
                                                     <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
                                                 </a>
@@ -64,9 +64,9 @@
                                                 <a  class="hex-content">
                                                     <span class="hex-content-inner">
                                                         <span class="icon">
-                                                            <i class="fa fa-braille"></i>
+                                                            <i class="fa fa-credit-card"></i>
                                                         </span>
-                                                        <span class="title">Services</span>
+                                                        <span class="title">Credit</span>
                                                     </span>
                                                     <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
                                                 </a>    
@@ -85,9 +85,9 @@
                                                 <a  class="hex-content">
                                                     <span class="hex-content-inner">
                                                         <span class="icon">
-                                                            <i class="fa fa-id-badge"></i>
+                                                            <i class="fa fa-graduation-cap"></i>
                                                         </span>
-                                                        <span class="title">Resume</span>
+                                                        <span class="title">Scholarships</span>
                                                     </span>
                                                     <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
                                                 </a>
@@ -106,9 +106,9 @@
                                                 <a  class="hex-content">
                                                     <span class="hex-content-inner">
                                                         <span class="icon">
-                                                            <i class="fa fa-life-ring"></i>
+                                                            <i class="fa fa-money"></i>
                                                         </span>
-                                                        <span class="title">Works</span>
+                                                        <span class="title">Taxes</span>
                                                     </span>
                                                     <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
                                                 </a>
@@ -129,7 +129,7 @@
                                                         <span class="icon">
                                                             <i class="fa fa-clipboard"></i>
                                                         </span>
-                                                        <span class="title">Testimonials</span>
+                                                        <span class="title">Loans</span>
                                                     </span>
                                                     <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
                                                 </a>
@@ -148,9 +148,9 @@
                                                 <a  class="hex-content">
                                                     <span class="hex-content-inner">
                                                         <span class="icon">
-                                                            <i class="fa fa-map-signs"></i>
+                                                            <i class="fa fa-check"></i>
                                                         </span>
-                                                        <span class="title">Contact</span>
+                                                        <span class="title"(click)="navigateToHome()">Enter</span>
                                                     </span>
                                                     <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
                                                 </a>
@@ -162,19 +162,41 @@
                         </div>
                     </div>
     </div>
-      <div class="modal fade" id="staticBackdrop"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade .modal-sm" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div>
             <div class="modal-body">
-                    <div>
-                        <div speech-bubble pbottom aleft style="--bbColor:#744b9f">
-                            <div class="title">Hello</div>
+
+                      <div class="popup-content">
+                    <div class="speech-bubble-container">
+                        <div speech-bubble pbottom aright style="--bbColor:#744b9f">
+                            <div class="title">Click these hexes for quick look</div>
+                        </div>
                     </div>
-                    <div>
-                        <img src="assets/little-g.png" alt="Gemini" class="greeting-image">
+                    <div class="image-container">
+                        <img src="assets/little-g.png" alt="Gemini" class="greeting-image" data-bs-dismiss="modal">
                     </div>
-                </div>
             </div>
           </div>
         </div>
+    </div>
+</div>
+<div class="modal fade .modal-sm" id="initialTerrence" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div>
+        <div class="modal-body">
+
+                  <div class="popup-content">
+                <div class="speech-bubble-container">
+                    <div speech-bubble pbottom aright style="--bbColor:#744b9f">
+                        <div class="title">Hello,My name is Gman nice to meet you</div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/little-g.png" alt="Gemini" class="greeting-image" data-bs-dismiss="modal">
+                </div>
+        </div>
       </div>
+    </div>
+</div>
+</div>
