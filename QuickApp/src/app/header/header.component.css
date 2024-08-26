@@ -3,14 +3,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open-sans', sans-serif;
 }
 nav{
   position: fixed;
+  top: 0px;
   z-index: 99;
   width: 100%;
   
-  background: #E63946;
+  background: #2b2d42;
 }
 nav .wrapper{
   position: relative;
@@ -45,14 +46,14 @@ nav .wrapper{
   transition: all 0.3s ease;
 }
 .nav-links li a:hover{
-  background: #ff8690;
+  background: #787ca8;
 }
 .nav-links .mobile-item{
   display: none;
 }
 .nav-links .drop-menu{
   position: absolute;
-  background: #E63946;
+  background: #2b2d42;
   width: 180px;
   line-height: 45px;
   top: 85px;
@@ -84,7 +85,7 @@ nav .wrapper{
   visibility: hidden;
 }
 .mega-box .content{
-  background: #E63946;
+  background: #2b2d42;
   padding: 25px 20px;
   display: flex;
   width: 100%;
@@ -145,7 +146,7 @@ nav .wrapper{
     max-width: 350px;
     top: 0;
     left: -100%;
-    background: #E63946;
+    background: #2b2d42;
     display: block;
     padding: 50px 10px;
     line-height: 50px;

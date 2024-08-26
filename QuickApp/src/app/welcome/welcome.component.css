@@ -22,7 +22,10 @@
   align-items: flex-start; /* Align items to the top */
 }
 .greeting-image {
-  width: 350px; /* Further reduce image size */
+  width: 250px; /* Further reduce image size */
+}
+.greeting-image-2{
+  width: 230px;
 }
 
 .speech-bubble-container {
@@ -35,7 +38,10 @@
 
 @media (max-width: 1075px) {
     .greeting-image {
-        width: 350px; /* Further reduce image size */
+      width: 200px;
+    }
+    .greeting-image-2{
+      width: 100px;
     }
 }
 @media (max-width: 450px) {
@@ -43,8 +49,12 @@
     font-size: x-small;
   }
     .greeting-image {
-        width: 200px; /* Further reduce image size */
-        margin-top: 80px;
+      width: 140px;
+      margin-top: 80px;
+    }
+    .greeting-image-2{
+      width: 130px;
+      margin-top: 80px;
     }
  
 }
