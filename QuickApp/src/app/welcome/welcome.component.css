@@ -29,16 +29,24 @@
   margin-right: -100px; /* Space between the speech bubble and the image */
   margin-top: 0;  /* Adjust this value to raise the speech bubble higher */
 }
+.speech-bubble-text{
+  font-size: small;
+}
 
 @media (max-width: 1075px) {
     .greeting-image {
         width: 350px; /* Further reduce image size */
     }
 }
-@media (max-width: 650px) {
+@media (max-width: 450px) {
+  .speech-bubble-text{
+    font-size: x-small;
+  }
     .greeting-image {
-        width: 350px; /* Further reduce image size */
+        width: 200px; /* Further reduce image size */
+        margin-top: 80px;
     }
+ 
 }
 
 
@@ -54,7 +62,7 @@
   border-radius: var(--bbBorderRadius);
   padding: var(--bbPadding);
   position: relative;
-  width: 600px;
+  width: 300px;
 }
 
 [speech-bubble]::before{
@@ -206,7 +214,7 @@
 }
 
 [speech-bubble] .title{
-  font-weight: 600;
+  font-weight: 400;
   color: rgb(0, 0, 0); 
 
   margin-bottom: 0.5rem
