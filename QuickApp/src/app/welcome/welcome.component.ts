@@ -13,4 +13,16 @@ export class WelcomeComponent {
   navigateToHome() {
     this.router.navigate(['/home']);
   }
+  isPopupVisible = false;
+
+  showPopup() {
+    console.log("Popup should be visible now");
+    this.isPopupVisible = true;
+  }
+  
+  hidePopup() {
+    console.log("Popup should be hidden now");
+    this.isPopupVisible = false;
+  }
+  
 }
