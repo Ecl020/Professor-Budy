@@ -22,10 +22,11 @@ import { ChatBotComponent } from './chat-bot/chat-bot.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     provideClientHydration()
+
   ],
   bootstrap: [AppComponent]
 })

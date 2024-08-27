@@ -6,15 +6,15 @@
         <div class="chat-history">
           <ng-container *ngFor="let item of chatHistory">
             <div class="chat-message" [ngClass]="{ 'user-message': item.from === 'user', 'bot-message': item.from === 'bot' }">
-                <ng-container *ngIf="loading">
-                    <p class="title speech-bubble-text">thinking...</p>
-                </ng-container>
               <span>{{ item.message }}</span>
             </div>
           </ng-container>
+          <div class="chat-message bot-message" *ngIf="loading">
+            <img src="assets/animations/loading.gif" alt="Loading" class="loading-gif" />
+          </div>
         </div>
         <div class="chat-input">
-          <input type="text" id="message-input" placeholder="Type ..." [(ngModel)]="prompt" />
+          <input type="text" id="message-input" placeholder="How can I help you ..." [(ngModel)]="prompt" />
           <button id="send-button"  (click)="sendData()">Send</button>
         </div>
       </div>

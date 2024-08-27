@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { GeminiService } from '../gemini.service';
 
+
 @Component({
   selector: 'app-chat-bot',
   templateUrl: './chat-bot.component.html',
@@ -14,6 +15,8 @@ export class ChatBotComponent {
 
   loading:boolean = false;
   chatHistory: any[] = [];
+
+  
   constructor(){
     this.geminiService.getMessageHistory().subscribe((res) =>{
       if(res){
@@ -30,8 +33,7 @@ export class ChatBotComponent {
       this.loading = true;
       const data = this.prompt;
       this.prompt = '';
-      this.response = '';
-      this.response = await this.geminiService.generateText(data);
+      await this.geminiService.generateText(data);
       this.loading = false;
     }
   }

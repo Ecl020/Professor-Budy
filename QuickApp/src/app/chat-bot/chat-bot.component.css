@@ -2,36 +2,41 @@
     margin-top: 4rem; /* Same as the height of the navbar */
     padding: 1rem; /* Optional: Add padding for content spacing */
 }
+.loading-gif {
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    display: block;
+    margin: auto; /* Center the GIF */
+  }
 .chat-icon {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 80px;
-    height: 80px;
-    background-color: #007bff;
-    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  
     z-index: 1000;
   }
   
   .chat-icon img {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
   }
   
   .chat-container {
     position: fixed;
-    bottom: 100px;
+    bottom: 160px;
     right: 20px;
     width: 300px;
     max-height: 400px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    background-color: #f5f5f5;
+    background-color: #caf0f8;
     border-radius: 10px;
     display: none; /* Initially hidden */
     flex-direction: column;
@@ -57,26 +62,26 @@
   }
   
   .user-message {
-    background-color: #e0f7fa;
+    background-color: #0077b6;
+    color: white; /* Set text color to white */
     align-self: flex-end;
     margin-left: auto;
   }
   
   .bot-message {
-    background-color: #f1f8e9;
+    background-color: #ffffff;
     align-self: flex-start;
     margin-right: auto;
   }
   
   .chat-message span {
     font-size: 14px;
-    color: #333;
     display: block;
   }
   
   .chat-input {
     display: flex;
-    background-color: #fff;
+    background-color: #caf0f8;
     padding: 10px;
     border-radius: 0 0 10px 10px;
   }
@@ -90,7 +95,7 @@
   
   .chat-input button {
     border: none;
-    background-color: #007bff;
+    background-color: #0077b6;
     color: white;
     padding: 8px 15px;
     border-radius: 5px;
