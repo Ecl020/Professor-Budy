@@ -11,6 +11,7 @@ export class Page2Component {
 
   prompt: string = '';
   response:string = '';
+  premadResponse:string = '';
   geminiService:GeminiService = inject(GeminiService);
   isChatOpen: boolean = false; // To track the chat container's state
 
@@ -41,8 +42,8 @@ export class Page2Component {
     const promptToSend = premadePrompt || this.prompt;
     if (promptToSend) {
       this.loading = true;
-      this.response = '';
-      this.response = await this.geminiService.generateText(promptToSend);
+      this.premadResponse = '';
+      this.premadResponse = await this.geminiService.generateText(promptToSend);
       this.loading = false;
     }
   }
