@@ -37,13 +37,4 @@ export class ChatBotComponent {
       this.loading = false;
     }
   }
-  async sendPremmadeData(premadePrompt?: string) {
-    const promptToSend = premadePrompt || this.prompt;
-    if (promptToSend) {
-      this.loading = true;
-      this.response = '';
-      this.response = await this.geminiService.generateText(promptToSend);
-      this.loading = false;
-    }
-  }
 }
