@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { PageComponent } from './page/page.component';
 import { Page2Component } from './page2/page2.component';
+import { FormsModule } from '@angular/forms';
+import { ChatBotComponent } from './chat-bot/chat-bot.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { Page2Component } from './page2/page2.component';
     HeaderComponent,
     WelcomeComponent,
     PageComponent,
-    Page2Component
+    Page2Component,
+    ChatBotComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()

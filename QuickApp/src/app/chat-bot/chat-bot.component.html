@@ -1,0 +1,22 @@
+<div class="chat-icon" (click)="toggleChat()">
+    <img src="assets/chat-icon.png" alt="Chat">
+  </div>
+<div class="page-content">
+    <div class="chat-container" [ngClass]="{ 'active': isChatOpen }">
+        <div class="chat-history">
+          <ng-container *ngFor="let item of chatHistory">
+            <div class="chat-message" [ngClass]="{ 'user-message': item.from === 'user', 'bot-message': item.from === 'bot' }">
+                <ng-container *ngIf="loading">
+                    <p class="title speech-bubble-text">thinking...</p>
+                </ng-container>
+              <span>{{ item.message }}</span>
+            </div>
+          </ng-container>
+        </div>
+        <div class="chat-input">
+          <input type="text" id="message-input" placeholder="Type ..." [(ngModel)]="prompt" />
+          <button id="send-button"  (click)="sendData()">Send</button>
+        </div>
+      </div>
+</div>
+

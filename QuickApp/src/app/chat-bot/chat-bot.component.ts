@@ -1,14 +1,12 @@
-import { Component, inject} from '@angular/core';
-
+import { Component, inject } from '@angular/core';
 import { GeminiService } from '../gemini.service';
 
 @Component({
-  selector: 'app-page2',
-  templateUrl: './page2.component.html',
-  styleUrl: './page2.component.css'
+  selector: 'app-chat-bot',
+  templateUrl: './chat-bot.component.html',
+  styleUrl: './chat-bot.component.css'
 })
-export class Page2Component {
-
+export class ChatBotComponent {
   prompt: string = '';
   response:string = '';
   geminiService:GeminiService = inject(GeminiService);
