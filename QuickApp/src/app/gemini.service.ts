@@ -32,6 +32,25 @@ export class GeminiService {
     })
     return text
   }
+  async generateTextJson(prompt: string): Promise<any> {
+    const model = this.generativeAi.getGenerativeModel({ model: 'gemini-pro' });
+
+    this.messageHistory.next({
+      from: 'user',
+      message: prompt
+    });
+
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = await response.text();
+
+    const jsonResponse = {
+      prompt: prompt,
+      responseText: text
+    };
+
+    return jsonResponse;
+  }
 
   public getMessageHistory(): Observable<any>{
     return this.messageHistory.asObservable();

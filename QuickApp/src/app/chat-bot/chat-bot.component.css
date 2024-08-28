@@ -58,6 +58,7 @@
     margin: 5px 0;
     padding: 8px;
     border-radius: 10px;
+    overflow-x: auto; /* Add scroll bar when content overflows */
     max-width: 70%;
   }
   
@@ -66,12 +67,14 @@
     color: white; /* Set text color to white */
     align-self: flex-end;
     margin-left: auto;
+
   }
   
   .bot-message {
     background-color: #ffffff;
     align-self: flex-start;
     margin-right: auto;
+  
   }
   
   .chat-message span {
