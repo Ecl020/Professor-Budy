@@ -43,7 +43,7 @@ export class Page2Component {
     if (promptToSend) {
       this.loading = true;
       this.premadResponse = '';
-      this.premadResponse = await this.geminiService.generateText(promptToSend);
+      this.premadResponse = await this.geminiService.generatePreMadeText(promptToSend);
       this.loading = false;
     }
   }
