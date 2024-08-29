@@ -7,6 +7,7 @@ import { GeminiService } from '../gemini.service';
   styleUrl: './page.component.css'
 })
 export class PageComponent {
+  
   school: string = '';
   
   prompt: string = '';
@@ -60,7 +61,7 @@ export class PageComponent {
       return;
     }
 
-    const prompt = `Please find scholarships related to ${this.selectedInterests.join(', ')} and consider opportunities that support diverse backgrounds, including those specifically for underrepresented groups. I'm planning to attend ${this.school}. 
+    const prompt = `Please find scholarships related to  ${this.selectedInterests.join(', ')}. I'm planning to attend ${this.school}. 
 
 Please provide the results in the following JSON format:
 
@@ -87,7 +88,7 @@ Make sure the information is up-to-date and includes working links to the applic
     if (promptToSend) {
       this.loading = true;
       this.premadResponse = '';
-      this.premadResponse = await this.geminiService.generateText(promptToSend);
+      this.premadResponse = await this.geminiService.generatePreMadeText(promptToSend);
       this.loading = false;
     }
   }
