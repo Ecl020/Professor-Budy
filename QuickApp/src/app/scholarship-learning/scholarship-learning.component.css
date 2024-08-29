@@ -6,8 +6,8 @@
 }
 
 /* Target the modal backdrop associated with the specific modal */
-#staticBackdrop.modal.fade.show {
-    background-color: rgb(206, 69, 69); /* Solid black background */
+#staticBackdrop.modal.fade.show{
+    background-color: rgb(0, 0, 0); /* Solid black background */
     opacity: 1; 
 }
 .card-container {
@@ -76,6 +76,24 @@
 
 .card-content p {
     margin: 10px 0 0; /* Adjust margin as needed */
+}
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px; /* Adjust width as needed */
+  height: 50px; /* Adjust height as needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border: none; /* Remove default border */
+  border-radius: 50%; /* Circular controls */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff; /* Icon color */
+  font-size: 20px; /* Icon size */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
 }
 
 @media (max-width: 1024px) {

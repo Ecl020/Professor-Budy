@@ -38,21 +38,104 @@
 </div>
 
   
-  <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+ <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">E-Learning Module</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+          <!-- Carousel -->
+          <div id="eLearningCarousel" class="carousel slide" data-bs-interval="false">
+            <div class="carousel-inner">
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <div class="container">
+                  <!-- Module Title -->
+                  <h2>Introduction to E-Learning</h2>
+                  
+                  <!-- Description -->
+                  <p>This module provides an overview of the basics of e-learning, including its benefits and key components. Explore the content below to get started.</p>
+                  
+                  <!-- Learning Objectives -->
+                  <div class="mb-4">
+                    <h4>Learning Objectives:</h4>
+                    <ul>
+                      <li>Understand the concept of e-learning.</li>
+                      <li>Identify the benefits of e-learning.</li>
+                      <li>Explore different types of e-learning content.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+                <div class="container">
+                  <!-- Content Section -->
+                  <div class="mb-4">
+                    <h4>Content:</h4>
+                    <p>E-learning, or electronic learning, refers to learning conducted via electronic media, typically on the Internet. It includes various types of content such as videos, interactive quizzes, and textual information.</p>
+                    <p>Benefits of e-learning include accessibility from anywhere, flexible scheduling, and often a more engaging learning experience through multimedia.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Slide 3 -->
+              <div class="carousel-item">
+                <div class="container">
+                  <!-- Interactive Quiz -->
+                  <div class="mb-4">
+                    <h4>Quiz:</h4>
+                    <form>
+                      <div class="mb-3">
+                        <label for="question1" class="form-label">1. What is e-learning?</label>
+                        <select class="form-select" id="question1" required>
+                          <option value="" disabled selected>Select an answer</option>
+                          <option value="a">Learning through books</option>
+                          <option value="b">Learning through electronic media</option>
+                          <option value="c">Learning in a classroom setting</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="question2" class="form-label">2. Which of the following is a benefit of e-learning?</label>
+                        <select class="form-select" id="question2" required>
+                          <option value="" disabled selected>Select an answer</option>
+                          <option value="a">Fixed scheduling</option>
+                          <option value="b">Accessibility from anywhere</option>
+                          <option value="c">Limited resources</option>
+                        </select>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit Answers</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
+        <div class="modal-footer d-flex justify-content-between">
+          <!-- Progress Bar -->
+          <div class="progress w-50">
+            <div 
+            class="progress-bar" 
+            role="progressbar" 
+            [style.width]="progressWidth" 
+            aria-valuenow="0" 
+            aria-valuemin="0" 
+            aria-valuemax="100">
+          </div>
+            <div id="carouselProgress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <!-- Arrow Button -->
+          <button class="btn btn-link" type="button" data-bs-target="#eLearningCarousel" data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
       </div>
     </div>
   </div>
+  
+  
+  
+  
