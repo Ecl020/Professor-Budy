@@ -9,6 +9,7 @@ import { PageComponent } from './page/page.component';
 import { Page2Component } from './page2/page2.component';
 import { FormsModule } from '@angular/forms';
 import { ChatBotComponent } from './chat-bot/chat-bot.component';
+import { ScholarshipLearningComponent } from './scholarship-learning/scholarship-learning.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ChatBotComponent } from './chat-bot/chat-bot.component';
     WelcomeComponent,
     PageComponent,
     Page2Component,
-    ChatBotComponent
+    ChatBotComponent,
+    ScholarshipLearningComponent
   ],
   imports: [
     BrowserModule,
