@@ -35,7 +35,7 @@ export class PageComponent {
   
     // Community of Color
     { name: 'Cultural Interests', interests: ['Cultural Festivals', 'Heritage Celebrations', 'Language Learning', 'Traditional Arts', 'Cultural Workshops', 'Community Gatherings'] },
-    { name: 'Support Networks', interests: ['Mentorship Programs', 'Scholarship Opportunities', 'Community Organizations', 'Networking Events', 'Support Groups', 'Cultural Associations'] },
+    { name: 'Support Networks', interests: ['Mentorship Programs', 'Scholarship Opportunities', 'Black People', 'Networking Events', 'Support Groups', 'Cultural Associations'] },
     { name: 'Diversity & Inclusion', interests: ['Diversity Initiatives', 'Inclusion Workshops', 'Cultural Awareness Training', 'Anti-Racism Education', 'Equity Programs', 'Community Advocacy'] }
   ];
   selectedInterests: string[] = [];
@@ -60,7 +60,25 @@ export class PageComponent {
       return;
     }
 
-    const prompt = `I am interested in ${this.selectedInterests.join(', ')}. Can you provide a curated list of scholarships related to that and I plan on going to ${this.school}? A short list is fine, specifically if you can find the scholarship name and requirements or point me where to go to look.`;
+    const prompt = `Please find scholarships related to ${this.selectedInterests.join(', ')} and consider opportunities that support diverse backgrounds, including those specifically for underrepresented groups. I'm planning to attend ${this.school}. 
+
+Please provide the results in the following JSON format:
+
+{
+  "scholarships": [
+    {
+      "name": "Scholarship Name",
+      "requirements": "Eligibility requirements and criteria for the scholarship.",
+      "application_deadline": "Application deadline date.",
+      "how_to_apply": "Instructions or a link on how to apply.",
+      "additional_info": "Any other relevant information, such as award amount or specific considerations."
+    },
+    ...
+  ]
+}
+
+Make sure the information is up-to-date and includes working links to the application or official websites.
+`;
     this.sendPremmadeData(prompt);
   }
 

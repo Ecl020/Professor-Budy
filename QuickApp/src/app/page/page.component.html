@@ -39,6 +39,9 @@
     </div>
 
     <div class="bot-response">
+      <ng-container *ngIf="loading">
+        <p class="title speech-bubble-text">thinking...</p>
+    </ng-container>
       <h4>Bot's Response:</h4>
       <p>{{ premadResponse }}</p>
     </div>
