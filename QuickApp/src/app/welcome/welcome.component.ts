@@ -27,7 +27,7 @@ export class WelcomeComponent implements OnInit {
           keyboard: false // Optional: disable closing with the keyboard
         });
         bootstrapModal.show();
-        this.sendPremmadeData('Introduce your self,tell the user they can explore and that this application is meant to be a hub to help individuals learn about scholarships, finicial literary , and prepare as best as we can.In 50 words or less');
+        this.sendPremmadeData('Introduce your self as Maya,tell the user they can explore and that this application is meant to be a hub to help individuals learn about scholarships, finicial literary , and prepare as best as we can.In 50 words or less');
       }
     }
   }

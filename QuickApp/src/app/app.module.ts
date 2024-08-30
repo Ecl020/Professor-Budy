@@ -10,6 +10,11 @@ import { Page2Component } from './page2/page2.component';
 import { FormsModule } from '@angular/forms';
 import { ChatBotComponent } from './chat-bot/chat-bot.component';
 import { ScholarshipLearningComponent } from './scholarship-learning/scholarship-learning.component';
+import { LoansLearningComponent } from './loans-learning/loans-learning.component';
+import { ScamsLearningComponent } from './scams-learning/scams-learning.component';
+import { CreditLearningComponent } from './credit-learning/credit-learning.component';
+import { TaxesLearningComponent } from './taxes-learning/taxes-learning.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +24,12 @@ import { ScholarshipLearningComponent } from './scholarship-learning/scholarship
     PageComponent,
     Page2Component,
     ChatBotComponent,
-    ScholarshipLearningComponent
+    ScholarshipLearningComponent,
+    LoansLearningComponent,
+    ScamsLearningComponent,
+    CreditLearningComponent,
+    TaxesLearningComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
