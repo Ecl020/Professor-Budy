@@ -1,0 +1,22 @@
+.icon-button {
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Icon color */
+    border: none; /* Remove border */
+    border-radius: 50%; /* Make the button circular */
+    width: 70px; /* Width of the button */
+    height: 70px; /* Height of the button */
+    position: fixed;
+    bottom: 250px;
+    right: 50px;
+    font-size: 24px; /* Icon size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+  }
+
+  .icon-button i {
+    margin: 0; /* Remove margin */
+  }
+
+  .icon-button:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+  }

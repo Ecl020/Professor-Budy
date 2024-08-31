@@ -22,6 +22,7 @@ import { environment } from '../environments/environment.development';
 import { AuthComponent } from './auth/auth.component';
 import { EmailVerifiedComponent } from './email-verified/email-verified.component';
 import { ProfileCreatorComponent } from './profile-creator/profile-creator.component';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ProfileCreatorComponent } from './profile-creator/profile-creator.compo
     HomeComponent,
     AuthComponent,
     EmailVerifiedComponent,
-    ProfileCreatorComponent
+    ProfileCreatorComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
