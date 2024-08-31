@@ -2,6 +2,7 @@
   <app-header></app-header>
   <router-outlet></router-outlet>
   <app-chat-bot></app-chat-bot>
+  <app-profile-creator [show]="loggedIn()"></app-profile-creator>
 </ng-container>
 <ng-container *ngIf="isIntroPage">
   <router-outlet></router-outlet>
