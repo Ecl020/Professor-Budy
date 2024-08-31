@@ -9,9 +9,11 @@ import { LoansLearningComponent } from './loans-learning/loans-learning.componen
 import { CreditLearningComponent } from './credit-learning/credit-learning.component';
 import { ScamsLearningComponent } from './scams-learning/scams-learning.component';
 import { HomeComponent } from './home/home.component';
+import { AuthComponent } from './auth/auth.component';
 
 const routes: Routes = [
   {path: 'welcome', component: WelcomeComponent},
+  {path: 'Auth', component: AuthComponent},
   {path: 'home', component: HomeComponent},
   {path: 'Find-Scholarships',component: PageComponent},
   {path:'page2', component:Page2Component},

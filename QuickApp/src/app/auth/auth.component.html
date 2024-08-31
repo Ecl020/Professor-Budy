@@ -1,24 +1,27 @@
-
 <div class="page-content">
-    <div>
-        {{getStateText()}}
+    <div class="auth-container">
+        <div class="state-text">
+            {{getStateText()}}
+        </div>
+        <div class="auth-form" *ngIf="isLoginState()">
+            <input #loginEmail class="input-field" placeholder="Email" type="email">
+            <input #loginPassword class="input-field" placeholder="Password" type="password">
+            <button (click)="loginUser(loginEmail, loginPassword)" class="auth-button">Login</button>
+        </div>
+        <div class="auth-form" *ngIf="isRegisterState()">
+            <input type="email" #registerEmail class="input-field" placeholder="Email">
+            <input type="password" #registerPassword class="input-field" placeholder="Password">
+            <input type="password" #registerConfirmPassword class="input-field" placeholder="Confirm Password">
+            <button (click)="registerUser(registerEmail, registerPassword, registerConfirmPassword)" class="auth-button">Register</button>
+        </div>
+        <div class="auth-form" *ngIf="isForgotPasword()">
+            <input #resetemail class="input-field" placeholder="Email" type="email">
+            <button (click)="ForgotPassword(resetemail)" class="auth-button">Reset</button>
+        </div>
+        <div class="auth-actions">
+            <button (click)="onLogin()" class="action-button">Login</button>
+            <button (click)="onRegister()" class="action-button">Register</button>
+            <button (click)="onForgotPassword()" class="action-button">Forgot Password</button>
+        </div>
     </div>
-    <div *ngIf="isLoginState()">
-        <input #loginEmail placeholder="Email">
-        <input #loginPassword placeholder="Password" type="password">
-        <button (click)="loginUser(loginEmail,loginPassword)">Login</button>
-    </div>
-    <div *ngIf="isRegisterState()">
-    <input type="email" #registerEmail placeholder="Email">
-    <input type="password" #registerPassword placeholder="Password">
-    <input type="password" #registerConfirmPassword placeholder="Confirm Password">
-    <button (click)="registerUser(registerEmail,registerPassword,registerConfirmPassword)">Register</button>
-    </div>
-    <div *ngIf="isForgotPasword()">
-        <input #resetemail placeholder="Email">
-        <button (click)="ForgotPassword(resetemail)">Reset</button>
-    </div>
-    <button (click)="onLogin()">Login</button>
-    <button (click)="onRegister()">Register</button>
-    <button (click)="onForgotPassword()">Forgot Password</button>
 </div>

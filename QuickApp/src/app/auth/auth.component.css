@@ -1,0 +1,81 @@
+
+  
+  .page-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 60px; /* Adjust if the navbar height changes */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  .auth-container {
+    max-width: 400px; /* Adjust as needed */
+    width: 100%; /* Make sure it fits well on smaller screens */
+    padding: 20px;
+    background: #fff; /* White background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between elements */
+  }
+  
+  .state-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Space below the state text */
+    text-align: center;
+    color: #333;
+  }
+  
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between inputs and buttons */
+  }
+  
+  .input-field {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .auth-button {
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff; /* Primary color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .auth-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  .auth-actions {
+    display: flex;
+    justify-content: space-between; /* Space out the action buttons */
+  }
+  
+  .action-button {
+    padding: 10px;
+    font-size: 16px;
+    color: #007bff; /* Primary color */
+    background-color: #fff;
+    border: 1px solid #007bff; /* Border color matches the button color */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .action-button:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
