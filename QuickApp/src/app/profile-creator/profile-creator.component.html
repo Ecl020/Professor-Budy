@@ -1,4 +1,4 @@
-<div id="profile" [ngClass]="{'active':show, 'idle':!show}">
+<div id="profile" *ngIf="isProfileCreatorVisible" [ngClass]="{'active':show, 'idle':!show}">
     <div id="profile-content">
         <input #nameInput placeholder="Name">
         <textarea #descriptionInpt placeholder="Description"></textarea>

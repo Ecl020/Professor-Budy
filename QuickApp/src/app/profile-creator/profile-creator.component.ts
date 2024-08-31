@@ -11,6 +11,7 @@ export class ProfileCreatorComponent implements OnInit{
   @Input() show?: boolean;
   private firestore = getFirestore(); // No need to initialize again
   private auth = getAuth(); // No need to initialize again
+  isProfileCreatorVisible = false; // Flag to control visibility
 
   isLoggedIn = false; // To track if the user is logged in
   currentUser: User | null = null; // To store the current user's data
@@ -25,6 +26,9 @@ export class ProfileCreatorComponent implements OnInit{
       if (user) {
         this.isLoggedIn = true;
         this.currentUser = user;
+        setTimeout(() => {
+          this.isProfileCreatorVisible = true; // Delay before making the page visible
+        }, 1000); // Delay in milliseconds
       } else {
         this.isLoggedIn = false;
         this.currentUser = null;

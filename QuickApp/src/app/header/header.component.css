@@ -75,6 +75,16 @@ nav .wrapper{
   visibility: hidden;
   box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
+.nav-links .profile-title {
+  color: #fff; /* White color for text */
+  font-size: 22px; /* Font size */
+  font-weight: 600; /* Bold text */
+  margin-left: 20px; /* Space from other elements */
+  padding: 10px 15px; /* Padding for spacing */
+
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
 .nav-links li:hover .drop-menu,
 .nav-links li:hover .mega-box{
   transition: all 0.3s ease;

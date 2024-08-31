@@ -62,6 +62,9 @@
         <li *ngIf="!loggedIn()"  class="nav-item">
           <a routerLink="Auth" class="login-button">Login</a>
         </li>
+        <li *ngIf="loggedIn() && hasProfile"  class="nav-item">
+          <span class="profile-title">Welcome, {{ userProfile?.name }}!</span>
+        </li>
         <li *ngIf="loggedIn()"  class="nav-item">
           <a routerLink="home" (click)="onLogout()" class="login-button">Logout</a>
         </li>
