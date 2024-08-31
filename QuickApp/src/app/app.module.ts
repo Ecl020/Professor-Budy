@@ -15,6 +15,11 @@ import { ScamsLearningComponent } from './scams-learning/scams-learning.componen
 import { CreditLearningComponent } from './credit-learning/credit-learning.component';
 import { TaxesLearningComponent } from './taxes-learning/taxes-learning.component';
 import { HomeComponent } from './home/home.component';
+import {initializeApp, getApps} from 'firebase/app';
+
+import {getAuth} from 'firebase/auth'
+import { environment } from '../environments/environment.development';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,8 @@ import { HomeComponent } from './home/home.component';
     ScamsLearningComponent,
     CreditLearningComponent,
     TaxesLearningComponent,
-    HomeComponent
+    HomeComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -42,4 +48,15 @@ import { HomeComponent } from './home/home.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(){
+    if(!getApps().length){
+      initializeApp(environment.firebaseConfig);
+      console.log('Firebase initialized successfully.');
+    }
+    const auth = getAuth();
+    if (auth) {
+      console.log('Firebase services are available, initialization successful.');
+    }
+  }
+ }

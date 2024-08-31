@@ -1,34 +1,18 @@
 import { Component, inject, OnInit} from '@angular/core';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
-import { GeminiService } from '../gemini.service';
-import { get } from 'http';
 
 @Component({
-  selector: 'app-page2',
-  templateUrl: './page2.component.html',
-  styleUrl: './page2.component.css'
+  selector: 'app-auth',
+  templateUrl: './auth.component.html',
+  styleUrl: './auth.component.css'
 })
-export class Page2Component implements OnInit {
-  prompt: string = '';
-  response:string = '';
-  premadResponse:string = '';
-  geminiService:GeminiService = inject(GeminiService);
-  isChatOpen: boolean = false; // To track the chat container's state
+export class AuthComponent implements OnInit {
 
-  loading:boolean = false;
-  chatHistory: any[] = [];
   state = AuthenticatorCompState.LOGIN;
+
   ngOnInit(): void {
     
   }
-  constructor(){
-    this.geminiService.getMessageHistory().subscribe((res) =>{
-      if(res){
-        this.chatHistory.push(res)
-      }
-    })
-  }
-
   onLogin(){
     this.state = AuthenticatorCompState.LOGIN;
   }
@@ -127,31 +111,7 @@ export class Page2Component implements OnInit {
         return "Forgot Password";
     }
   }
-
-  toggleChat() {
-    this.isChatOpen = !this.isChatOpen; // Toggle chat visibility
-  }
-  async sendData(){
-    if(this.prompt){
-      this.loading = true;
-      const data = this.prompt;
-      this.prompt = '';
-      this.response = '';
-      this.response = await this.geminiService.generateText(data);
-      this.loading = false;
-    }
-  }
-  async sendPremmadeData(premadePrompt?: string) {
-    const promptToSend = premadePrompt || this.prompt;
-    if (promptToSend) {
-      this.loading = true;
-      this.premadResponse = '';
-      this.premadResponse = await this.geminiService.generatePreMadeText(promptToSend);
-      this.loading = false;
-    }
-  }
 }
-
 export enum AuthenticatorCompState{
   LOGIN,
   REGISTER,
