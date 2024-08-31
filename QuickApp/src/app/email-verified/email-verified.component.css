@@ -1,0 +1,74 @@
+/* General styling for the page */
+.page-content{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Container for the email verification message */
+  #email-verification {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  /* Heading style */
+  #email-verification h1 {
+    color: #ff6347; /* Tomato color for emphasis */
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Paragraph style */
+  #email-verification p {
+    color: #333333;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  /* Button style */
+  #email-verification button {
+    background-color: #ff6347; /* Tomato color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for the button */
+  #email-verification button:hover {
+    background-color: #ff4500; /* Darker tomato color */
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 480px) {
+    #email-verification {
+      padding: 20px;
+      width: 90%;
+    }
+  
+    #email-verification h1 {
+      font-size: 20px;
+    }
+  
+    #email-verification p {
+      font-size: 14px;
+    }
+  
+    #email-verification button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+  

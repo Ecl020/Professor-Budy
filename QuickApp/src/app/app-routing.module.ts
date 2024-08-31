@@ -10,8 +10,10 @@ import { CreditLearningComponent } from './credit-learning/credit-learning.compo
 import { ScamsLearningComponent } from './scams-learning/scams-learning.component';
 import { HomeComponent } from './home/home.component';
 import { AuthComponent } from './auth/auth.component';
+import { EmailVerifiedComponent } from './email-verified/email-verified.component';
 
 const routes: Routes = [
+  {path: 'emailverification', component: EmailVerifiedComponent},
   {path: 'welcome', component: WelcomeComponent},
   {path: 'Auth', component: AuthComponent},
   {path: 'home', component: HomeComponent},

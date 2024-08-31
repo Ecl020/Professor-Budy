@@ -20,6 +20,7 @@ import {initializeApp, getApps} from 'firebase/app';
 import {getAuth} from 'firebase/auth'
 import { environment } from '../environments/environment.development';
 import { AuthComponent } from './auth/auth.component';
+import { EmailVerifiedComponent } from './email-verified/email-verified.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AuthComponent } from './auth/auth.component';
     CreditLearningComponent,
     TaxesLearningComponent,
     HomeComponent,
-    AuthComponent
+    AuthComponent,
+    EmailVerifiedComponent
   ],
   imports: [
     BrowserModule,

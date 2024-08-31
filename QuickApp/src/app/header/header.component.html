@@ -59,8 +59,11 @@
           </div>
         </li>
         <li><a href="#">Feedback</a></li>
-        <li class="nav-item">
+        <li *ngIf="!loggedIn()"  class="nav-item">
           <a routerLink="Auth" class="login-button">Login</a>
+        </li>
+        <li *ngIf="loggedIn()"  class="nav-item">
+          <a routerLink="home" (click)="onLogout()" class="login-button">Logout</a>
         </li>
       </ul>
       <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>

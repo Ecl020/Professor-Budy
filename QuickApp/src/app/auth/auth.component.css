@@ -30,7 +30,7 @@ a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: #accffe ;
+	background: #a8dadc ;
     overflow: hidden; /* Prevent scrolling */
 }
 .inner {
