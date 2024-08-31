@@ -1,0 +1,112 @@
+.page-content {
+    margin-top: 4rem; /* Same as the height of the navbar */
+    padding: 1rem; /* Optional: Add padding for content spacing */
+}
+.loading-gif {
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    display: block;
+    margin: auto; /* Center the GIF */
+  }
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 130px;
+    height: 130px;
+
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    z-index: 1000;
+  }
+  
+  .chat-icon img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .chat-container {
+    position: fixed;
+    bottom: 160px;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    background-color: #caf0f8;
+    border-radius: 10px;
+    display: none; /* Initially hidden */
+    flex-direction: column;
+  }
+  
+  .chat-container.active {
+    display: flex; /* Display the chat container when active */
+  }
+  
+  .chat-history {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    flex-grow: 1;
+  }
+  
+  .chat-message {
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 10px;
+    overflow-x: auto; /* Add scroll bar when content overflows */
+    max-width: 70%;
+  }
+  
+  .user-message {
+    background-color: #0077b6;
+    color: white; /* Set text color to white */
+    align-self: flex-end;
+    margin-left: auto;
+
+  }
+  
+  .bot-message {
+    background-color: #ffffff;
+    align-self: flex-start;
+    margin-right: auto;
+  
+  }
+  
+  .chat-message span {
+    font-size: 14px;
+    display: block;
+  }
+  
+  .chat-input {
+    display: flex;
+    background-color: #caf0f8;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .chat-input input[type="text"] {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+  }
+  
+  .chat-input button {
+    border: none;
+    background-color: #0077b6;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .chat-input button:hover {
+    background-color: #0056b3;
+  }
+ 

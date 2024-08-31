@@ -2,3 +2,301 @@
     margin-top: 4rem; /* Same as the height of the navbar */
     padding: 1rem; /* Optional: Add padding for content spacing */
 }
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: 60px;
+    background-color: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .chat-icon img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .chat-container {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    display: none; /* Initially hidden */
+    flex-direction: column;
+  }
+  
+  .chat-container.active {
+    display: flex; /* Display the chat container when active */
+  }
+  
+  .chat-history {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    flex-grow: 1;
+  }
+  
+  .chat-message {
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 10px;
+    max-width: 70%;
+  }
+  
+  .user-message {
+    background-color: #e0f7fa;
+    align-self: flex-end;
+    margin-left: auto;
+  }
+  
+  .bot-message {
+    background-color: #f1f8e9;
+    align-self: flex-start;
+    margin-right: auto;
+  }
+  
+  .chat-message span {
+    font-size: 14px;
+    color: #333;
+    display: block;
+  }
+  
+  .chat-input {
+    display: flex;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .chat-input input[type="text"] {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+  }
+  
+  .chat-input button {
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .chat-input button:hover {
+    background-color: #0056b3;
+  }
+  
+[speech-bubble], [speech-bubble] * { box-sizing: border-box }
+
+[speech-bubble]{
+  --bbColor: rgb(255, 255, 255);
+  --bbArrowSize: 1.5rem;
+  --bbBorderRadius: 0.25rem;
+  --bbPadding: 1rem;
+  background: var(--bbColor);
+  border-radius: var(--bbBorderRadius);
+  padding: var(--bbPadding);
+  position: relative;
+  width: 300px;
+}
+
+[speech-bubble]::before{
+  content: ''; 
+  position: absolute;
+  background: var(--bbColor);
+}
+
+[speech-bubble][pbottom]{ margin-bottom: var(--bbArrowSize) }
+[speech-bubble][ptop]   { margin-top: var(--bbArrowSize); }
+[speech-bubble][pleft]  { margin-left: var(--bbArrowSize); }
+[speech-bubble][pright] { margin-right: var(--bbArrowSize); }
+
+
+/* bottom and top  */
+[speech-bubble][pbottom]::before,
+[speech-bubble][ptop]::before{
+  --width: calc(var(--bbArrowSize) / 2 * 3);
+  height: var(--bbArrowSize);
+  width: var(--width);
+}
+
+/* bottom */
+[speech-bubble][pbottom]::before{
+  top: calc(100% - 2px);
+}
+[speech-bubble][pbottom][aleft]::before{
+  left: 1rem;
+  clip-path: polygon(25% 0, 100% 0, 0% 100%)
+}
+[speech-bubble][pbottom][acenter]::before{
+  left: calc(50% - var(--width) / 2);
+  clip-path: polygon(12.5% 0, 87.5% 0, 50% 100%)
+}
+[speech-bubble][pbottom][aright]::before{
+  right: 1rem;
+  clip-path: polygon(0 0, 75% 0, 100% 100%)
+}
+
+/* top */
+[speech-bubble][ptop]::before{
+  bottom: calc(100% - 2px);
+}
+[speech-bubble][ptop][aleft]::before{
+  left: var(--bbPadding);
+  clip-path: polygon(0 0, 100% 100%, 25% 100%)
+}
+[speech-bubble][ptop][acenter]::before{
+  left: calc(50% - var(--width) / 2);
+  clip-path: polygon(12.5% 100%, 50% 0, 87.5% 100%)
+}
+[speech-bubble][ptop][aright]::before{
+  right: var(--bbPadding);
+  clip-path: polygon(0 100%, 100% 0, 75% 100%)
+}
+
+/* left and right  */
+[speech-bubble][pleft]::before,
+[speech-bubble][pright]::before{
+  --height: calc(var(--bbArrowSize) / 2 * 3);
+  width: var(--bbArrowSize);
+  height: var(--height);
+}
+
+/* right */
+[speech-bubble][pright]::before{
+  left: calc(100% - 2px);
+}
+[speech-bubble][pright][atop]::before{
+  top: var(--bbPadding);
+  clip-path: polygon(100% 0, 0 100%, 0 25%)
+}
+[speech-bubble][pright][acenter]::before{
+  top: calc(50% - var(--height) / 2);
+  clip-path: polygon(0 12.5%, 100% 50%, 0 87.5%)
+}
+[speech-bubble][pright][abottom]::before{
+  bottom: var(--bbPadding);
+  clip-path: polygon(0 0, 100% 100%, 0 75%)
+}
+
+/* left */
+[speech-bubble][pleft]::before{
+  right: calc(100% - 2px);
+}
+[speech-bubble][pleft][atop]::before{
+  top: var(--bbPadding);
+  clip-path: polygon(0 0, 100% 25%, 100% 100%)
+}
+[speech-bubble][pleft][acenter]::before{
+  top: calc(50% - var(--height) / 2);
+  clip-path: polygon(0 50%, 100% 12.5%, 100% 87.5%);
+}
+[speech-bubble][pleft][abottom]::before{
+  bottom: var(--bbPadding);
+  clip-path: polygon(0 100%, 100% 0, 100% 75%)
+}
+
+/* flip */
+[speech-bubble][pbottom][flip]::before,
+[speech-bubble][ptop][flip]::before{
+  transform: scaleX(-1)
+}
+[speech-bubble][pleft][flip]::before,
+[speech-bubble][pright][flip]::before{
+  transform: scaleY(-1)
+}
+
+
+
+
+
+.middle{
+  grid-area: cc;
+  align-self: center;
+  justify-self: center;
+  text-align:center;
+  color: white;
+}
+
+[speech-bubble][pbottom][aleft]   {grid-area: bl}
+[speech-bubble][pbottom][acenter] {grid-area: bc}
+[speech-bubble][pbottom][aright]  {grid-area: br}
+
+[speech-bubble][pright][atop]     {grid-area: rt}
+[speech-bubble][pright][acenter]  {grid-area: rc}
+[speech-bubble][pright][abottom]  {grid-area: rb}
+
+[speech-bubble][pleft][atop]      {grid-area: lt}
+[speech-bubble][pleft][acenter]   {grid-area: lc}
+[speech-bubble][pleft][abottom]   {grid-area: lb}
+
+[speech-bubble][ptop][aleft]      {grid-area: tl}
+[speech-bubble][ptop][acenter]    {grid-area: tc}
+[speech-bubble][ptop][aright]     {grid-area: tr}
+
+[speech-bubble][pbottom],
+[speech-bubble][ptop]{margin: 0}
+
+[speech-bubble]{ 
+  filter: drop-shadow(0px 0px 0.2rem black);
+  transition: transform 0.25s ease
+}
+[speech-bubble]:hover{
+  transform: scale(1.05);
+  filter: 
+    drop-shadow(0px 0px 0.2rem black)
+    drop-shadow(0px 0px 1rem var(--bbColor));
+}
+
+[speech-bubble] .title{
+  font-weight: 400;
+  color: rgb(0, 0, 0); 
+
+  margin-bottom: 0.5rem
+}
+[speech-bubble] code {
+  background: white;
+  margin: 0.125rem;
+  box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+  white-space: nowrap;
+  font-size: .9rem
+}
+
+.middle code{
+  font-size: 1rem;
+}
+
+.popup-content {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+  }
+  .greeting-image {
+    width: 250px; /* Further reduce image size */
+  }
+  .greeting-image-2{
+    width: 230px;
+  }
+  
+  .speech-bubble-container {
+    margin-right: 0px; /* Space between the speech bubble and the image */
+    margin-top: 0;  /* Adjust this value to raise the speech bubble higher */
+  }
+  .speech-bubble-text{
+    font-size: small;
+  }
