@@ -1,4 +1,4 @@
-<!-- Include Font Awesome CDN in your HTML head -->
+
 
 
 <div class="wrapper">
@@ -40,9 +40,9 @@
                 <button (click)="ForgotPassword(resetemail)" class="auth-button">Reset</button>
             </div>
             <div class="auth-actions">
-                <a href="#" (click)="onLogin()" class="auth-link">Login</a>
-                <a href="#" (click)="onRegister()" class="auth-link">Register</a>
-                <a href="#" (click)="onForgotPassword()" class="auth-link">Forgot Password</a>
+                <a (click)="onLogin()" class="auth-link">Login</a>
+                <a (click)="onRegister()" class="auth-link">Register</a>
+                <a (click)="onForgotPassword()" class="auth-link">Forgot Password?</a>
             </div>
         </form>
       

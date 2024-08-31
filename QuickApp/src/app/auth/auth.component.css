@@ -1,8 +1,9 @@
 
-body {
-	font-size: 14px;
-	margin: 0;
-	color: #999;
+html, body {
+    height: 100%; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    overflow: hidden; /* Prevent scrolling */
 }
 input, textarea, select, button {
 	font-family: "Muli-Regular";
@@ -24,11 +25,13 @@ a {
     outline: none;
 }
 .wrapper {
-	min-height: 100vh;
+    padding-top: 60px;
+	min-height: 100vh; /* Ensures it covers the full viewport height */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background: #accffe ;
+    overflow: hidden; /* Prevent scrolling */
 }
 .inner {
 	position: relative;
@@ -36,10 +39,9 @@ a {
 }
 .image-1 {
 	position: absolute;
-    width: 250px;
-    height: 600px;
-	bottom: -100px;
-	left: -191px;
+    height: 700px;
+	bottom: -105px;
+	left: -193px;
 	z-index: 99;
 }
 .image-2 {
@@ -48,6 +50,7 @@ a {
 	right: -129px;
 }
 form {
+    height: 600px;
 	width: 100%;
 	position: relative;
 	z-index: 9;
@@ -174,6 +177,23 @@ button {
     	}
     }
 }
+.auth-actions {
+    text-align: center; /* Center align the links */
+    margin-top: 20px; /* Space from the form fields */
+}
+
+.auth-link {
+    cursor: pointer;
+    display: block;
+    color: #000000; /* Link color */
+    text-decoration: none;
+    font-size: 16px; /* Font size for the links */
+    margin: 5px 0; /* Space between links */
+}
+
+.auth-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
 @media (max-width: 991px) {
 	.inner {
 		width: 400px;
@@ -189,6 +209,7 @@ button {
 		display: none;
 	}
 	form {
+        height: auto;
 		padding: 35px;
 		box-shadow: none;
 	    -webkit-box-shadow: none;
