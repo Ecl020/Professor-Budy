@@ -14,8 +14,8 @@ export class PostfeedComponent implements OnInit {
 
   constructor() {}
 
-  async ngOnInit() {
-    await this.fetchPosts();
+  ngOnInit(): void {
+    this.fetchPosts();
   }
 
   async fetchPosts() {
