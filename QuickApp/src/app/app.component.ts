@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
         this.isLoggedIn = false;
         this.currentUser = null;
         this.hasProfile = false; // Reset profile status when logged out
-        console.log('User is signed out');
+        
       }
     });
   }

@@ -28,6 +28,7 @@ import { ProfileCreatorComponent } from './profile-creator/profile-creator.compo
 import { CreatePostComponent } from './create-post/create-post.component';
 import { PostfeedComponent } from './postfeed/postfeed.component';
 import { PostComponent } from './post/post.component';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -58,9 +59,11 @@ import { PostComponent } from './post/post.component';
     MatButtonModule,
     MatIconModule,
     MatInputModule,
+    HttpClientModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(withFetch())
 
   ],
   bootstrap: [AppComponent]
@@ -69,11 +72,10 @@ export class AppModule {
   constructor(){
     if(!getApps().length){
       initializeApp(environment.firebaseConfig);
-      console.log('Firebase initialized successfully.');
+      
     }
     const auth = getAuth();
     if (auth) {
-      console.log('Firebase services are available, initialization successful.');
     }
   }
  }

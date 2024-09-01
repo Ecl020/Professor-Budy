@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { getFirestore, collection, addDoc, setDoc, doc, getDocs } from '@firebase/firestore';
+import { getFirestore, collection, getDocs, query, orderBy, limit, startAfter } from '@firebase/firestore';
 import { PostData } from '../models/post.model';
 
 @Component({
@@ -10,6 +10,7 @@ import { PostData } from '../models/post.model';
 export class PostfeedComponent implements OnInit {
   private firestore = getFirestore(); // No need to initialize again
   posts: PostData[] = [];
+  lastVisiblePost: any = null;
 
   constructor() {}
 
@@ -18,15 +19,28 @@ export class PostfeedComponent implements OnInit {
   }
 
   async fetchPosts() {
+    console.log('Fetching posts...');
+
     try {
-      const querySnapshot = await getDocs(collection(this.firestore, 'posts'));
+      // Fetch all posts from the 'posts' collection
+      const postsCollection = collection(this.firestore, 'posts');
+      const querySnapshot = await getDocs(postsCollection);
+
+      // Log the raw query snapshot
+      console.log('Query snapshot:', querySnapshot);
+
+      // Map and log fetched posts
       this.posts = querySnapshot.docs.map(doc => {
         const data = doc.data() as PostData;
+        console.log('Fetched post data:', data);
         return {
           ...data,
-          createdAt: data.createdAt // Convert Firestore timestamp to JavaScript Date
+          createdAt: data.createdAt
         };
       });
+
+      // Log the final posts array
+      console.log('Final posts array:', this.posts);
     } catch (error) {
       console.error('Error fetching posts:', error);
     }
