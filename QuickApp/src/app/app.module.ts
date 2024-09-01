@@ -16,13 +16,18 @@ import { CreditLearningComponent } from './credit-learning/credit-learning.compo
 import { TaxesLearningComponent } from './taxes-learning/taxes-learning.component';
 import { HomeComponent } from './home/home.component';
 import {initializeApp, getApps} from 'firebase/app';
-
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import {getAuth} from 'firebase/auth'
 import { environment } from '../environments/environment.development';
 import { AuthComponent } from './auth/auth.component';
 import { EmailVerifiedComponent } from './email-verified/email-verified.component';
 import { ProfileCreatorComponent } from './profile-creator/profile-creator.component';
 import { CreatePostComponent } from './create-post/create-post.component';
+import { PostfeedComponent } from './postfeed/postfeed.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -41,12 +46,18 @@ import { CreatePostComponent } from './create-post/create-post.component';
     AuthComponent,
     EmailVerifiedComponent,
     ProfileCreatorComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    PostfeedComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
   ],
   providers: [
     provideClientHydration()

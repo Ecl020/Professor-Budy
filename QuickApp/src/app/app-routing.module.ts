@@ -12,9 +12,11 @@ import { HomeComponent } from './home/home.component';
 import { AuthComponent } from './auth/auth.component';
 import { EmailVerifiedComponent } from './email-verified/email-verified.component';
 import { CreatePostComponent } from './create-post/create-post.component';
+import { PostfeedComponent } from './postfeed/postfeed.component';
 
 const routes: Routes = [
   {path: 'emailverification', component: EmailVerifiedComponent},
+  {path: 'postfeed', component: PostfeedComponent},
   {path: 'welcome', component: WelcomeComponent},
   {path: 'create-post', component: CreatePostComponent},
   {path: 'Auth', component: AuthComponent},
