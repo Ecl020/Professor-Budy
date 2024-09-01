@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged, User } from "firebase/auth";
-import { getFirestore, collection, addDoc, setDoc, doc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, setDoc, doc, getDoc } from 'firebase/firestore';
 
 @Component({
   selector: 'app-create-post',
@@ -29,26 +29,26 @@ export class CreatePostComponent implements OnInit {
   }
   constructor(){}
 
-  PhotoSelected(photoSelector: HTMLInputElement) {
-    if (photoSelector.files && photoSelector.files.length > 0) {
-      this.selectedImageFile = photoSelector.files[0];
-    } else {
-      return;
-    }
+  // PhotoSelected(photoSelector: HTMLInputElement) {
+  //   if (photoSelector.files && photoSelector.files.length > 0) {
+  //     this.selectedImageFile = photoSelector.files[0];
+  //   } else {
+  //     return;
+  //   }
 
-    let fileReader = new FileReader();
-    fileReader.readAsDataURL(this.selectedImageFile);
+  //   let fileReader = new FileReader();
+  //   fileReader.readAsDataURL(this.selectedImageFile);
 
-    fileReader.addEventListener('loadend', (ev) => {
-      let readableString = fileReader.result?.toString();
-      if (readableString) {
-        let postPreviewImage = document.getElementById('post-preview-image') as HTMLImageElement;
-        if (postPreviewImage) {
-          postPreviewImage.src = readableString;
-        }
-      }
-    });
-  }
+  //   fileReader.addEventListener('loadend', (ev) => {
+  //     let readableString = fileReader.result?.toString();
+  //     if (readableString) {
+  //       let postPreviewImage = document.getElementById('post-preview-image') as HTMLImageElement;
+  //       if (postPreviewImage) {
+  //         postPreviewImage.src = readableString;
+  //       }
+  //     }
+  //   });
+  // }
 
   PostClick(commentInput: HTMLTextAreaElement) {
     if (!this.currentUser) {
@@ -58,31 +58,31 @@ export class CreatePostComponent implements OnInit {
   
     const comment = commentInput.value;
   
-    if (this.selectedImageFile) {
-      const storage = getStorage();
-      const filePath = `uploads/${Date.now()}_${this.selectedImageFile.name}`;
-      const fileRef = ref(storage, filePath);
+    // if (this.selectedImageFile) {
+    //   const storage = getStorage();
+    //   const filePath = `uploads/${Date.now()}_${this.selectedImageFile.name}`;
+    //   const fileRef = ref(storage, filePath);
   
-      const uploadTask = uploadBytesResumable(fileRef, this.selectedImageFile);
+    //   const uploadTask = uploadBytesResumable(fileRef, this.selectedImageFile);
   
-      uploadTask.on('state_changed',
-        (snapshot) => {
-          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log('Upload is ' + progress + '% done');
-        },
-        (error) => {
-          console.error('Upload failed:', error);
-        },
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            console.log('File available at', downloadURL);
-            this.savePost(comment, downloadURL);
-          });
-        }
-      );
-    } else {
+    //   uploadTask.on('state_changed',
+    //     (snapshot) => {
+    //       const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    //       console.log('Upload is ' + progress + '% done');
+    //     },
+    //     (error) => {
+    //       console.error('Upload failed:', error);
+    //     },
+    //     () => {
+    //       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+    //         console.log('File available at', downloadURL);
+    //         this.savePost(comment, downloadURL);
+    //       });
+    //     }
+    //   );
+    // } 
       this.savePost(comment, null);
-    }
+    
   }
   
 
@@ -102,7 +102,7 @@ export class CreatePostComponent implements OnInit {
   
       await setDoc(postRef, {
         comment: comment,
-        imageUrl: imageUrl,
+        // imageUrl: imageUrl,
         userId: userId,
         createdAt: new Date(),
       },{ merge: true });
@@ -112,5 +112,52 @@ export class CreatePostComponent implements OnInit {
       console.error('Error adding post:', error);
     }
   }
+
+  // async savePost(comment: string, imageUrl: string | null) {
+  //   if (!this.currentUser) {
+  //     console.error('User is not logged in');
+  //     return;
+  //   }
+
+  //   const userId = this.currentUser.uid;
+
+  //   try {
+  //     // Fetch the user's profile information
+  //     const userDocRef = doc(this.firestore, 'users', userId);
+  //     const userDoc = await getDoc(userDocRef);
+
+  //     if (userDoc.exists()) {
+  //       const userProfile = userDoc.data();
+
+  //       // Prepare post data
+  //       const postData = {
+  //         comment: comment,
+  //         imageUrl: imageUrl,
+  //         userId: userId,
+  //         userName: userProfile['name'],
+  //         createdAt: new Date(),
+  //       };
+
+  //       // Save to Firestore
+  //       const postsCollectionRef = collection(this.firestore, 'posts');
+  //       const postRef = doc(postsCollectionRef);
+  //       await setDoc(postRef, postData, { merge: true });
+  //       console.log('Post saved successfully with ID:', postRef.id);
+
+  //       // Send to SQL server via your API
+  //       this.http.post('http://your-api-url/api/save-post', postData)
+  //         .subscribe(response => {
+  //           console.log('Post saved to SQL server:', response);
+  //         }, error => {
+  //           console.error('Error saving post to SQL server:', error);
+  //         });
+  //     } else {
+  //       console.error('User profile not found');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error adding post:', error);
+  //   }
+  // }
+  
   
 }
