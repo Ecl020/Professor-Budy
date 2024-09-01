@@ -1,5 +1,9 @@
 /* Styles for the post card */
+.content{
+  padding-top: 60px;
+}
 .post-card {
+    margin-top: 80px; /* Increased margin to account for navbar height and some additional space */
     max-width: 600px;
     margin: 16px auto;
     border-radius: 8px;
@@ -30,8 +34,8 @@
   }
   
   .post-image {
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
     height: auto;
     border-radius: 4px;
     margin-top: 8px;
