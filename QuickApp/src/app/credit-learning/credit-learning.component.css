@@ -1,6 +1,0 @@
-.page-content {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    margin-top: 60px; /* Adjust if the navbar height changes */
-}

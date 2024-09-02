@@ -6,22 +6,21 @@
       <ul class="nav-links">
         <label for="close-btn" class="btn close-btn"><i class="fa fa-bars"></i></label>
         <li><a routerLink="home">Home</a></li>
-        <li><a routerLink="page2">About</a></li>
         <li>
           <a routerLink="home" class="desktop-item">Learning Corner</a>
           <input type="checkbox" id="showDrop">
           <label for="showDrop" class="mobile-item">Learning Corner</label>
           <ul class="drop-menu">
-            <li><a routerLink="scolar-learning">Scholarships</a></li>
-            <li><a routerLink="loans-learning">Loans</a></li>
-            <li><a routerLink="taxes-learning">Taxes</a></li>
-            <li><a routerLink="scams-learning">Scams</a></li>
-            <li><a routerLink="credit-learning">Credit</a></li>
+            <li><a routerLink="home">Scholarships</a></li>
+            <li><a routerLink="home">Loans</a></li>
+            <li><a routerLink="home">Taxes</a></li>
+            <li><a routerLink="home">Scams</a></li>
+            <li><a routerLink="home">Credit</a></li>
           </ul>
         </li>
         <li>
           <input type="checkbox" id="showMega">
-          <a href="#" class="desktop-item">Mega Menu</a>
+          <a routerLink="home" class="desktop-item">Mega Menu</a>
           <label for="showMega" class="mobile-item">Mega Menu</label>
           <div class="mega-box">
             <div class="content">
@@ -58,7 +57,6 @@
             </div>
           </div>
         </li>
-        <li><a href="#">Feedback</a></li>
         <li *ngIf="!loggedIn()"  class="nav-item">
           <a routerLink="Auth" class="login-button">Login</a>
         </li>

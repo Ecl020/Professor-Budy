@@ -5,15 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { PageComponent } from './page/page.component';
-import { Page2Component } from './page2/page2.component';
+import { PageComponent } from './searchScholarships/page.component';
 import { FormsModule } from '@angular/forms';
 import { ChatBotComponent } from './chat-bot/chat-bot.component';
-import { ScholarshipLearningComponent } from './scholarship-learning/scholarship-learning.component';
-import { LoansLearningComponent } from './loans-learning/loans-learning.component';
-import { ScamsLearningComponent } from './scams-learning/scams-learning.component';
-import { CreditLearningComponent } from './credit-learning/credit-learning.component';
-import { TaxesLearningComponent } from './taxes-learning/taxes-learning.component';
 import { HomeComponent } from './home/home.component';
 import {initializeApp, getApps} from 'firebase/app';
 import { MatCardModule } from '@angular/material/card';
@@ -36,13 +30,7 @@ import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/
     HeaderComponent,
     WelcomeComponent,
     PageComponent,
-    Page2Component,
     ChatBotComponent,
-    ScholarshipLearningComponent,
-    LoansLearningComponent,
-    ScamsLearningComponent,
-    CreditLearningComponent,
-    TaxesLearningComponent,
     HomeComponent,
     AuthComponent,
     EmailVerifiedComponent,
