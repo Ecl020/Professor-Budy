@@ -1,60 +1,233 @@
-/* Styles for the post card */
-.content{
-  padding-top: 60px;
+.content {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
+
 .post-card {
-    margin-top: 80px; /* Increased margin to account for navbar height and some additional space */
-    max-width: 600px;
-    margin: 16px auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    background: #e8e7e7;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.mat-card-header {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #757575;
+}
+
+.post-image-container {
+  margin-top: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically if needed */
+}
+
+.post-image {
+  width: 80%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.post-comment {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Styling for the actions */
+.post-actions {
+  display: flex;
+  align-items: center; /* Align icons vertically */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 16px; /* Moves the icons to the left of the card */
+}
+
+/* Each action */
+.action {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: #757575;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-right: 20px; /* Reduces the space between icons */
+}
+
+.action i {
+  margin-right: 6px; /* Slightly closer icon and text */
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for the like button */
+.like-action:hover {
+  color: red;
+}
+
+.like-action:hover i {
+  color: red;
+}
+
+/* Comment icon shouldn't change color */
+.comment-action:hover {
+  color: #757575; /* Ensures the comment text doesn't change color */
+}
+
+.comment-action i {
+  color: #757575; /* Ensures the comment icon doesn't change color */
+}
+
+/* Additional padding for text below the post */
+.post-comment {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+.like-count {
+  font-size: 14px;
+  color: #757575;
+  margin-left: 16px; /* Aligns the like count with the action icons */
+  margin-top: 5px; /* Adds a small gap between the actions and the like count */
+}
+.comment-text {
+  font-size: 14px;
+  color: #333;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .post-card {
+    margin-top: 60px;
   }
-  
-  /* Styles for the card header */
+
   .mat-card-header {
-    background: #f8f9fa;
-    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
   }
-  
-  .mat-card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
+
+  .user-avatar {
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
   }
-  
-  .mat-card-subtitle {
-    font-size: 0.9rem;
-    color: #6c757d;
+
+  .title {
+    font-size: 16px;
   }
-  
-  /* Styles for the card content */
-  .mat-card-content {
-    padding: 16px;
+
+  .subtitle {
+    font-size: 10px;
   }
-  
+
+  .post-image-container {
+    margin-top: 8px; /* Adjust margin for smaller screens */
+  }
+
   .post-image {
-    height: 100px;
-    width: 100px;
+    width: 70%; /* Make image slightly smaller */
+    max-width: 400px; /* Limit the maximum width */
     height: auto;
-    border-radius: 4px;
-    margin-top: 8px;
   }
-  
-  /* Styles for the card actions */
-  .mat-card-actions {
-    padding: 8px 16px;
-    border-top: 1px solid #dee2e6;
-    display: flex;
-    justify-content: space-between;
-    background: #f8f9fa;
+
+  .post-actions {
+    flex-direction: row;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 8px; /* Adjust padding for smaller screens */
   }
-  
-  .mat-card-actions button {
-    color: #007bff;
+
+  .action {
+    margin-right: 10px; /* Less space between icons */
   }
-  
-  .mat-card-actions button:hover {
-    background: rgba(0, 123, 255, 0.1);
+
+  .action i {
+    font-size: 16px; /* Smaller icon size */
   }
-  
+
+  .like-count {
+    font-size: 12px;
+    margin-left: 8px; /* Align with smaller icons */
+  }
+
+  .comment-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-card {
+    margin-top: 60px;
+  }
+
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .subtitle {
+    font-size: 8px;
+  }
+
+  .post-image-container {
+    margin-top: 5px; /* Further adjust margin for very small screens */
+  }
+
+  .post-image {
+    width: 60%; /* Make image smaller */
+    max-width: 300px; /* Further limit the maximum width */
+    height: auto;
+  }
+
+  .post-actions {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-left: 4px; /* Further adjust padding for very small screens */
+  }
+
+  .action {
+    margin-right: 8px;
+  }
+
+  .action i {
+    font-size: 14px; /* Smaller icon size */
+  }
+
+  .like-count {
+    font-size: 10px;
+    margin-left: 4px; /* Align with very small icons */
+  }
+
+  .comment-text {
+    font-size: 10px;
+  }
+}
+
