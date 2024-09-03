@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';  // Import HttpClient
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged, User } from "firebase/auth";
 import { getFirestore, collection, addDoc, setDoc, doc, getDoc } from 'firebase/firestore';
@@ -27,7 +28,7 @@ export class CreatePostComponent implements OnInit {
       }
     });
   }
-  constructor(){}
+  constructor(private http: HttpClient){}
 
   // PhotoSelected(photoSelector: HTMLInputElement) {
   //   if (photoSelector.files && photoSelector.files.length > 0) {
@@ -87,6 +88,32 @@ export class CreatePostComponent implements OnInit {
   
 
 
+  // async savePost(comment: string, imageUrl: string | null) {
+  //   if (!this.currentUser) {
+  //     console.error('User is not logged in');
+  //     return;
+  //   }
+  
+  //   const userId = this.currentUser.uid;
+  
+  //   try {
+  //     // Generate a unique document ID by using the Firestore 'collection' function
+  //     const postsCollectionRef = collection(this.firestore, 'posts');
+  //     const postRef = doc(postsCollectionRef); // Firestore will automatically generate a unique ID
+  
+  //     await setDoc(postRef, {
+  //       comment: comment,
+  //       // imageUrl: imageUrl,
+  //       userId: userId,
+  //       createdAt: new Date(),
+  //     },{ merge: true });
+  
+  //     console.log('Post saved successfully with ID:', postRef.id);
+  //   } catch (error) {
+  //     console.error('Error adding post:', error);
+  //   }
+  // }
+
   async savePost(comment: string, imageUrl: string | null) {
     if (!this.currentUser) {
       console.error('User is not logged in');
@@ -96,68 +123,41 @@ export class CreatePostComponent implements OnInit {
     const userId = this.currentUser.uid;
   
     try {
-      // Generate a unique document ID by using the Firestore 'collection' function
-      const postsCollectionRef = collection(this.firestore, 'posts');
-      const postRef = doc(postsCollectionRef); // Firestore will automatically generate a unique ID
+      // Fetch the user's profile information
+      const userDocRef = doc(this.firestore, 'users', userId);
+      const userDoc = await getDoc(userDocRef);
   
-      await setDoc(postRef, {
-        comment: comment,
-        // imageUrl: imageUrl,
-        userId: userId,
-        createdAt: new Date(),
-      },{ merge: true });
+      if (userDoc.exists()) {
+        const userProfile = userDoc.data();
   
-      console.log('Post saved successfully with ID:', postRef.id);
+        // Prepare post data with a unique ID
+        const postId = doc(collection(this.firestore, 'posts')).id; // Generate a unique ID
+        const postData = {
+          id: postId, // Add the generated ID to the post data
+          comment: comment,
+          imageUrl: imageUrl,
+          userId: userId,
+          userName: userProfile['name'],
+          createdAt: new Date(),
+        };
+  
+       
+  
+        // Send to Mock JSON server via your API
+        this.http.post('http://localhost:3000/posts', postData)
+          .subscribe(response => {
+            console.log('Post saved to mock JSON server:', response);
+          }, error => {
+            console.error('Error saving post to mock JSON server:', error);
+          });
+      } else {
+        console.error('User profile not found');
+      }
     } catch (error) {
       console.error('Error adding post:', error);
     }
   }
-
-  // async savePost(comment: string, imageUrl: string | null) {
-  //   if (!this.currentUser) {
-  //     console.error('User is not logged in');
-  //     return;
-  //   }
-
-  //   const userId = this.currentUser.uid;
-
-  //   try {
-  //     // Fetch the user's profile information
-  //     const userDocRef = doc(this.firestore, 'users', userId);
-  //     const userDoc = await getDoc(userDocRef);
-
-  //     if (userDoc.exists()) {
-  //       const userProfile = userDoc.data();
-
-  //       // Prepare post data
-  //       const postData = {
-  //         comment: comment,
-  //         imageUrl: imageUrl,
-  //         userId: userId,
-  //         userName: userProfile['name'],
-  //         createdAt: new Date(),
-  //       };
-
-  //       // Save to Firestore
-  //       const postsCollectionRef = collection(this.firestore, 'posts');
-  //       const postRef = doc(postsCollectionRef);
-  //       await setDoc(postRef, postData, { merge: true });
-  //       console.log('Post saved successfully with ID:', postRef.id);
-
-  //       // Send to SQL server via your API
-  //       this.http.post('http://your-api-url/api/save-post', postData)
-  //         .subscribe(response => {
-  //           console.log('Post saved to SQL server:', response);
-  //         }, error => {
-  //           console.error('Error saving post to SQL server:', error);
-  //         });
-  //     } else {
-  //       console.error('User profile not found');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error adding post:', error);
-  //   }
-  // }
+  
   
   
 }
