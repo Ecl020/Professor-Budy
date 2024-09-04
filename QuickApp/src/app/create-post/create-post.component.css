@@ -1,0 +1,87 @@
+.icon-button {
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Icon color */
+    border: none; /* Remove border */
+    border-radius: 50%; /* Make the button circular */
+    width: 70px; /* Width of the button */
+    height: 70px; /* Height of the button */
+    position: fixed;
+    bottom: 250px;
+    right: 50px;
+    font-size: 24px; /* Icon size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+  }
+
+  .icon-button i {
+    margin: 0; /* Remove margin */
+  }
+
+  .icon-button:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+  }
+
+  #photo-upload {
+    display: none;
+  }
+  
+  .create-post-card {
+    padding: 1.5em;
+    border-radius: 0.75em;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .textarea-container {
+    margin-top: 1em;
+    padding: 0.5em 0;
+  }
+  
+  textarea {
+    font-size: 1.25em;
+    padding: 1em;
+    resize: none;
+    width: 100%;
+    min-height: 150px;
+    border: 1px solid #ddd;
+    border-radius: 0.5em;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  textarea:focus {
+    border-color: #007bff;
+  }
+  
+  #post-preview {
+    text-align: center;
+    margin-top: 1.5em;
+  }
+  
+  #post-preview-image {
+    object-fit: cover;
+    object-position: center;
+    width: 200px;
+    height: 130px;
+    border-radius: 0.5em;
+    border: 2px solid #ddd;
+  }
+  
+  .photo-upload-label {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .photo-upload-label:hover {
+    background-color: #e0e0e0;
+  }
+  
+  mat-card-actions {
+    margin-top: 1em;
+  }

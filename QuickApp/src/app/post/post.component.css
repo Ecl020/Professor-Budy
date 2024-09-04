@@ -1,0 +1,60 @@
+/* Styles for the post card */
+.content{
+  padding-top: 60px;
+}
+.post-card {
+    margin-top: 80px; /* Increased margin to account for navbar height and some additional space */
+    max-width: 600px;
+    margin: 16px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #f0e8e8;
+  }
+  
+  /* Styles for the card header */
+  .mat-card-header {
+    background: #f8f9fa;
+    padding: 16px;
+  }
+  
+  .mat-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .mat-card-subtitle {
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  
+  /* Styles for the card content */
+  .mat-card-content {
+    padding: 16px;
+  }
+  
+  .post-image {
+    height: 100px;
+    width: 100px;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+  
+  /* Styles for the card actions */
+  .mat-card-actions {
+    padding: 8px 16px;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    background: #f8f9fa;
+  }
+  
+  .mat-card-actions button {
+    color: #007bff;
+  }
+  
+  .mat-card-actions button:hover {
+    background: rgba(0, 123, 255, 0.1);
+  }
+  
