@@ -23,6 +23,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { PostfeedComponent } from './postfeed/postfeed.component';
 import { PostComponent } from './post/post.component';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    QuillModule.forRoot(),
   ],
   providers: [
     provideClientHydration(),

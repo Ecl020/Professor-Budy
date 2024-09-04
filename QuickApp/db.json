@@ -1,4 +1,51 @@
 {
+  "comments": [
+    {
+      "id": "Djo0ANaibN3Gx0ZQjF3J",
+      "postId": "WRLiq4LZXb3wAvNRqgiu",
+      "comment": "hey this post fire",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T07:22:35.304Z"
+    },
+    {
+      "id": "PJLPTdrQrfuDaib75xo5",
+      "postId": "WRLiq4LZXb3wAvNRqgiu",
+      "comment": "i want to say again this post is fire",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T07:27:31.862Z"
+    },
+    {
+      "id": "f8mBHbKKPjqFOM455eby",
+      "postId": "yPISUw5oO2uw5rwMjyCG",
+      "comment": "hey so how do i get involved",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T07:31:46.849Z"
+    },
+    {
+      "id": "QismstamIkZwuVFR4KZH",
+      "postId": "WRLiq4LZXb3wAvNRqgiu",
+      "comment": "yo whats up cory how do i get info on this post",
+      "imageUrl": null,
+      "userId": "f7rj60ILDWdxoNlB7ID9rg0ynmm1",
+      "userName": "Test6",
+      "createdAt": "2024-09-04T07:37:11.847Z"
+    },
+    {
+      "id": "KcFoAcZCpYgt7jYTTqN1",
+      "postId": "utxXyYyviMCQmRdXyBoT",
+      "comment": "hahah this  is hilarious",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:11:13.371Z"
+    }
+  ],
   "posts": [
     {
       "id": "f6LxtVBaNl97VBGcFzgf",
@@ -166,7 +213,8 @@
       "imageUrl": null,
       "userId": "f7rj60ILDWdxoNlB7ID9rg0ynmm1",
       "userName": "Test6",
-      "createdAt": "2024-09-03T06:57:58.721Z"
+      "createdAt": "2024-09-03T06:57:58.721Z",
+      "likesCount": 4
     },
     {
       "id": "WRLiq4LZXb3wAvNRqgiu",
@@ -174,7 +222,197 @@
       "imageUrl": null,
       "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
       "userName": "cory strickland",
-      "createdAt": "2024-09-03T07:55:37.640Z"
+      "createdAt": "2024-09-03T07:55:37.640Z",
+      "likesCount": 2
+    },
+    {
+      "id": "HFnza3vqoz9LGOcwpgQP",
+      "comment": "<p><strong>NSBE FAM #</strong><span style=\"color: rgb(230, 0, 0);\"> How are we doing just wanted to say love yall </span><a href=\"https://nsbe.org\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(230, 0, 0);\">link</a></p>",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T08:37:07.078Z",
+      "likesCount": 4
+    },
+    {
+      "id": "kuaK3bOcl35Bb2ba2pUr",
+      "comment": "<p><span style=\"color: rgb(230, 0, 0);\">Another test post</span></p>",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T08:53:52.366Z"
+    },
+    {
+      "id": "kgbCR6E2dAXefKcy7BHo",
+      "comment": "<p>hello</p>",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T08:58:46.443Z"
+    },
+    {
+      "id": "fG5PCyLGcCNn8XSICehC",
+      "comment": "<p>hello</p>",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/professor-buddy.appspot.com/o/uploads%2F1725440326134_profile-icon.png?alt=media&token=dafc7507-9970-43d9-82bd-0cfd18d34adf",
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T08:58:47.070Z",
+      "likesCount": 6
+    },
+    {
+      "id": "10PLq69rS1jouXzTQgA0",
+      "comment": "<p><span style=\"color: rgb(230, 0, 0);\">hello testing the color change</span></p>",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:03:12.963Z"
+    },
+    {
+      "id": "fCkdbyjkvgNGqY6hqdMP",
+      "comment": "<p><span style=\"color: rgb(230, 0, 0);\">hello testing the color change</span></p>",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/professor-buddy.appspot.com/o/uploads%2F1725440592865_thinking.png?alt=media&token=20854db3-fd60-43e0-9465-05e0f6f00fbb",
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:03:13.819Z"
+    },
+    {
+      "id": "FPAA5x2dcL3XVGchTGgk",
+      "comment": "<p><span class=\"ql-font-serif\">hello</span><span class=\"ql-font-monospace\"> there </span>using different fonts</p>",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:05:28.711Z"
+    },
+    {
+      "id": "CSo7tw4lsCwS6miLo0v5",
+      "comment": "hello there just testing the image saving capapbilites",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:07:04.808Z"
+    },
+    {
+      "id": "vczRj2EEQvyrSTDATTUB",
+      "comment": "no thoughts heads empty #Living ",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:09:22.801Z"
+    },
+    {
+      "id": "utxXyYyviMCQmRdXyBoT",
+      "comment": "no thoughts heads empty #Living ",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/professor-buddy.appspot.com/o/uploads%2F1725440962722_top-view-tomato-deck-chair.jpg?alt=media&token=1f51df54-952f-43c0-94b6-e976a2bd2498",
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:09:26.362Z",
+      "likesCount": 7
+    },
+    {
+      "id": "ZSCaVRDteoZZ22db15xR",
+      "comment": "jsut having fun with it yk",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:11:36.626Z"
+    },
+    {
+      "id": "amXlAlf6meXwXzx3is8H",
+      "comment": "jsut having fun with it yk",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/professor-buddy.appspot.com/o/uploads%2F1725441096549_top-view-tomato-deck-chair.jpg?alt=media&token=3b307233-5d2f-442c-a71a-d0c2e1cf62be",
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:11:39.905Z"
+    },
+    {
+      "id": "CUTG2iJbDdMJkk7srKja",
+      "comment": "",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:12:41.450Z"
+    },
+    {
+      "id": "7GS8UAmLSdwbNW85FwGj",
+      "comment": "",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/professor-buddy.appspot.com/o/uploads%2F1725441161380_top-view-tomato-deck-chair.jpg?alt=media&token=7302e4f8-4658-4242-9bf4-0b014341f06a",
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:12:44.501Z"
+    },
+    {
+      "id": "NGQW8CeFTxshjO5qW8xK",
+      "comment": "yo erik respond if you can see this",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:16:17.554Z"
+    },
+    {
+      "id": "GiPDc8DEnpkYJvo40GHC",
+      "comment": "yo erik respond if you can see this",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/professor-buddy.appspot.com/o/uploads%2F1725441377478_top-view-tomato-deck-chair.jpg?alt=media&token=e8952042-f19a-4275-b741-bc4351d7c869",
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:16:20.353Z"
+    },
+    {
+      "id": "Ovjjx43ZAJQHzeJCm4mC",
+      "comment": "",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:17:29.278Z"
+    },
+    {
+      "id": "RJcGcyuL5Rr5kVCQPATe",
+      "comment": "",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/professor-buddy.appspot.com/o/uploads%2F1725441449202_top-view-tomato-deck-chair.jpg?alt=media&token=d2db565c-46d9-4c87-b755-b4c731c4ed9f",
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:17:32.304Z"
+    },
+    {
+      "id": "VRhKzJWasDjbmHmruNWO",
+      "comment": "test",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:17:58.619Z"
+    },
+    {
+      "id": "4jEpjylpgCuIL1pSafU2",
+      "comment": "test",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/professor-buddy.appspot.com/o/uploads%2F1725441478530_top-view-tomato-deck-chair.jpg?alt=media&token=91fbd985-16c9-4885-aeb1-514dec98b58c",
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:18:01.367Z"
+    },
+    {
+      "id": "gRdCUAp9euTvYSGIKs8Q",
+      "comment": "test 3",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:18:45.829Z"
+    },
+    {
+      "id": "nWmhk6RrCH8fqmSErjOb",
+      "comment": "test 3",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/professor-buddy.appspot.com/o/uploads%2F1725441525721_top-view-tomato-deck-chair.jpg?alt=media&token=26a193e3-0bc7-4bc8-a7bb-54f934b8192e",
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:18:48.526Z",
+      "likesCount": 5
+    },
+    {
+      "id": "XfOmww6lEINCGZ0CglNT",
+      "comment": "test",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/professor-buddy.appspot.com/o/uploads%2F1725441718702_top-view-tomato-deck-chair.jpg?alt=media&token=8fc4ad56-a198-462b-a868-9db2db0e35bf",
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T09:22:01.480Z",
+      "likesCount": 11
     }
   ]
 }

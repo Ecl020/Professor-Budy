@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ChangeDetectorRef } from '@angular/core';
 import { getFirestore, collection, getDocs, query, orderBy, limit, startAfter } from '@firebase/firestore';
 import { PostData } from '../models/post.model';
 import { HttpClient } from '@angular/common/http';
@@ -15,10 +15,11 @@ export class PostfeedComponent implements OnInit {
   lastVisiblePost: any = null;
   isLoading = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.fetchPosts();
+    
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -27,9 +28,7 @@ export class PostfeedComponent implements OnInit {
     const scrollHeight = document.documentElement.scrollHeight;
     const clientHeight = document.documentElement.clientHeight;
 
-    console.log('Scroll Top:', scrollTop);
-    console.log('Scroll Height:', scrollHeight);
-    console.log('Client Height:', clientHeight);
+ 
 
     // Load more posts when scrolled near the bottom
     if (scrollTop + clientHeight >= scrollHeight - 50 && !this.isLoading) {

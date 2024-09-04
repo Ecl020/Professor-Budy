@@ -15,6 +15,8 @@ export class CreatePostComponent implements OnInit {
   currentUser: User | null = null; // To store the current user's data
   isLoggedIn = false; // To track if the user is logged in
   selectedImageFile: File | null = null; // Initialize the variable
+  comment: string = ''; // Bind to Quill editor
+  
 
   ngOnInit(): void {
     // Example of using Firebase Auth to check user state
@@ -30,61 +32,74 @@ export class CreatePostComponent implements OnInit {
   }
   constructor(private http: HttpClient){}
 
-  // PhotoSelected(photoSelector: HTMLInputElement) {
-  //   if (photoSelector.files && photoSelector.files.length > 0) {
-  //     this.selectedImageFile = photoSelector.files[0];
-  //   } else {
-  //     return;
-  //   }
+  PhotoSelected(photoSelector: HTMLInputElement) {
+    if (photoSelector.files && photoSelector.files.length > 0) {
+      this.selectedImageFile = photoSelector.files[0];
+    } else {
+      return;
+    }
 
-  //   let fileReader = new FileReader();
-  //   fileReader.readAsDataURL(this.selectedImageFile);
+    let fileReader = new FileReader();
+    fileReader.readAsDataURL(this.selectedImageFile);
 
-  //   fileReader.addEventListener('loadend', (ev) => {
-  //     let readableString = fileReader.result?.toString();
-  //     if (readableString) {
-  //       let postPreviewImage = document.getElementById('post-preview-image') as HTMLImageElement;
-  //       if (postPreviewImage) {
-  //         postPreviewImage.src = readableString;
-  //       }
-  //     }
-  //   });
-  // }
+    fileReader.addEventListener('loadend', (ev) => {
+      let readableString = fileReader.result?.toString();
+      if (readableString) {
+        let postPreviewImage = document.getElementById('post-preview-image') as HTMLImageElement;
+        if (postPreviewImage) {
+          postPreviewImage.src = readableString;
+        }
+      }
+    });
+  }
 
-  PostClick(commentInput: HTMLTextAreaElement) {
+  async PostClick(commentInput: HTMLTextAreaElement) {
     if (!this.currentUser) {
       console.error('User is not logged in');
       return;
     }
   
     const comment = commentInput.value;
-  
-    // if (this.selectedImageFile) {
-    //   const storage = getStorage();
-    //   const filePath = `uploads/${Date.now()}_${this.selectedImageFile.name}`;
-    //   const fileRef = ref(storage, filePath);
-  
-    //   const uploadTask = uploadBytesResumable(fileRef, this.selectedImageFile);
-  
-    //   uploadTask.on('state_changed',
-    //     (snapshot) => {
-    //       const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-    //       console.log('Upload is ' + progress + '% done');
-    //     },
-    //     (error) => {
-    //       console.error('Upload failed:', error);
-    //     },
-    //     () => {
-    //       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-    //         console.log('File available at', downloadURL);
-    //         this.savePost(comment, downloadURL);
-    //       });
-    //     }
-    //   );
-    // } 
-      this.savePost(comment, null);
     
+    if (this.selectedImageFile) {
+      const storage = getStorage();
+      const filePath = `uploads/${Date.now()}_${this.selectedImageFile.name}`;
+      const fileRef = ref(storage, filePath);
+  
+      try {
+        // Return a Promise for the image upload task
+        const uploadTask = uploadBytesResumable(fileRef, this.selectedImageFile);
+        await new Promise<void>((resolve, reject) => {
+          uploadTask.on('state_changed',
+            (snapshot) => {
+              const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+              console.log('Upload is ' + progress + '% done');
+            },
+            (error) => {
+              console.error('Upload failed:', error);
+              reject(error);
+            },
+            async () => {
+              try {
+                const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+                console.log('File available at', downloadURL);
+                await this.savePost(comment, downloadURL);
+                resolve();
+              } catch (error) {
+                console.error('Error getting download URL:', error);
+                reject(error);
+              }
+            }
+          );
+        });
+      } catch (error) {
+        console.error('Error uploading image:', error);
+      }
+    } else {
+      await this.savePost(comment, null);
+    }
   }
+  
   
 
 

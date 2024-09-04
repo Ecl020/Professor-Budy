@@ -1,33 +1,45 @@
 <div class="content">
   <mat-card class="post-card">
     <mat-card-header>
-      <!-- <img mat-card-avatar [src]="postData.userAvatarUrl" alt="{{postData.userName}}" class="user-avatar"> -->
-      <mat-card-title class="title">{{postData.userName}}</mat-card-title>
-      <mat-card-subtitle class="subtitle">{{postData.createdAt | date:'short'}}</mat-card-subtitle>
+      <mat-card-title class="title">{{ postData.userName }}</mat-card-title>
+      <mat-card-subtitle class="subtitle">{{ postData.createdAt | date: 'short' }}</mat-card-subtitle>
     </mat-card-header>
 
     <mat-card-content>
-      <!-- <div *ngIf="postData.imageUrl" class="post-image-container">
-         <img [src]="postData.imageUrl" alt="Post image" class="post-image"/> 
-      </div> -->
       <div class="post-image-container">
-        <img src="assets/chat-icon.png" alt="Chat" class="post-image">
+        <img [src]="postData.imageUrl" alt="Post image" class="post-image" [ngClass]="{ 'hidden': !postData.imageUrl }">
       </div>
-      
       <div class="post-actions">
-        <div class="action like-action">
+        <div class="action like-action" (click)="onLikePost()">
           <i class="fas fa-heart"></i>
         </div>
-        <div class="action comment-action">
+        <div class="action comment-action" (click)="onAddComment()">
           <i class="fas fa-comment"></i>
         </div>
       </div>
       <div class="like-count">
-        <span>1000 Likes</span>
+        <span>{{ postData.likesCount ?? 0 }} Likes</span>
       </div>
       
-      <p class="post-comment"><strong>{{postData.userName}}</strong> {{ postData.comment }}</p>
-      <p class="comment-text">view all comments..</p>
+      <p class="post-comment"><strong>{{ postData.userName }}</strong> {{ postData.comment }}</p>
+      
+      <!-- Section to view comments -->
+      <div class="comments-section">
+        <p class="view-comments-text" (click)="toggleComments()" (click)="loadComments()">
+          {{ showComments ? 'hide comments..' : 'view all ' + (postData.comments?.length ?? 0) + ' comments..' }}
+        </p>
+        
+        <!-- Comments are only shown when showComments is true -->
+        <div *ngIf="showComments">
+          <div *ngFor="let comment of comments" class="comment">
+            <div class="comment-content">
+              <p class="comment-text">
+                <strong>{{ comment.userName }}</strong> {{ comment.comment }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>
