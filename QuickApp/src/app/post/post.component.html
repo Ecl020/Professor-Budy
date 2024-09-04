@@ -25,9 +25,11 @@
       
       <!-- Section to view comments -->
       <div class="comments-section">
-        <p class="view-comments-text" (click)="toggleComments()" (click)="loadComments()">
+        <div *ngFor="let comment of comments" class="comment">
+        <p class="view-comments-text" (click)="toggleComments(comment.id)">
           {{ showComments ? 'hide comments..' : 'view all ' + (postData.comments?.length ?? 0) + ' comments..' }}
         </p>
+        </div>
         
         <!-- Comments are only shown when showComments is true -->
         <div *ngIf="showComments">
@@ -36,6 +38,13 @@
               <p class="comment-text">
                 <strong>{{ comment.userName }}</strong> {{ comment.comment }}
               </p>
+              <!-- Replies Section -->
+              <div  class="replies-section">
+                <div *ngFor="let reply of replies">
+                  <div>{{reply.userName}} {{ reply.reply }}</div>
+                </div>
+              </div>
+              <button (click)="onAddReply(comment.id)">Reply</button>
             </div>
           </div>
         </div>

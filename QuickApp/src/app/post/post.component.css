@@ -157,6 +157,53 @@
   font-weight: 600;
   color: #262626;
 }
+/* General styles for replies section */
+.replies-section {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+/* Styling for each reply */
+.reply {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect for replies */
+.reply:hover {
+  background-color: #f1f1f1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Header styling */
+.reply-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Text styling */
+.reply-text {
+  margin: 0;
+  color: #333;
+}
+/* Button styling */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

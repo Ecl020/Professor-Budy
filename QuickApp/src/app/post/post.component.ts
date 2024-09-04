@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CommentData, PostData } from '../models/post.model';
+import { CommentData, PostData, ReplyData } from '../models/post.model';
 
 import { HttpClient } from '@angular/common/http';  // Import HttpClient
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
@@ -19,6 +19,8 @@ export class PostComponent implements OnInit{
   isLoggedIn = false; // To track if the user is logged in
   selectedImageFile: File | null = null; // Initialize the variable
   comments: CommentData[] = []; // To store fetched comments
+  replies: ReplyData[] = [];
+  @Input() commentData!: CommentData;
   showComments = false; // Toggle variable
   @Input()
   postData!: PostData;
@@ -36,7 +38,7 @@ export class PostComponent implements OnInit{
     });
     this.loadComments();
     console.log('Post Data:', this.postData);
-    console.log('Comments Array:', this.postData?.comments);
+    console.log('Comments Array:', this.commentData);
   }
 
   constructor(private http: HttpClient){}
@@ -47,7 +49,62 @@ export class PostComponent implements OnInit{
       this.saveComment(this.postData.id, commentText, null);
     }
   }
-
+  onAddReply(commentId: string): void {
+    const replyText = prompt('Enter your reply:');
+    if (replyText) {
+      this.saveReply(commentId, replyText, null);
+    }
+  }
+  
+  async saveReply(commentId: string, reply: string, imageUrl: string | null) {
+    if (!this.currentUser) {
+      console.error('User is not logged in');
+      return;
+    }
+  
+    const userId = this.currentUser.uid;
+  
+    try {
+      // Fetch the user's profile information
+      const userDocRef = doc(this.firestore, 'users', userId);
+      const userDoc = await getDoc(userDocRef);
+  
+      if (userDoc.exists()) {
+        const userProfile = userDoc.data();
+  
+        // Prepare reply data with a unique ID
+        const replyId = doc(collection(this.firestore, 'replies')).id; // Generate a unique ID
+        const replyData = {
+          id: replyId,
+          commentId: commentId, // Associate the reply with the comment
+          reply: reply,
+          imageUrl: imageUrl,
+          userId: userId,
+          userName: userProfile['name'],
+          createdAt: new Date(),
+        };
+  
+        // Save to Firestore
+        await setDoc(doc(this.firestore, 'replies', replyId), replyData);
+  
+        // Optionally, save to Mock JSON server
+        this.http.post('http://localhost:3000/replies', replyData)
+          .subscribe(response => {
+            console.log('Reply saved to mock JSON server:', response);
+          }, error => {
+            console.error('Error saving reply to mock JSON server:', error);
+          });
+  
+        // Reload comments to include new reply
+        this.loadComments();
+      } else {
+        console.error('User profile not found');
+      }
+    } catch (error) {
+      console.error('Error adding reply:', error);
+    }
+  }
+  
   async saveComment(postId: string, comment: string, imageUrl: string | null) {
     if (!this.currentUser) {
       console.error('User is not logged in');
@@ -102,9 +159,23 @@ export class PostComponent implements OnInit{
           console.error('Error fetching comments:', error);
         });
     }
+    async loadReplies(commentId: string): Promise<CommentData[]> {
+      return new Promise((resolve, reject) => {
+        this.http.get<ReplyData[]>(`http://localhost:3000/replies?commentId=${commentId}`)
+          .subscribe(replies => {
+            this.replies = replies;
+            console.log('Fetched replies:', replies); // Log the fetched replies
+          }, error => {
+            console.error('Error fetching replies:', error); // Log any errors
+            reject(error);
+          });
+      });
+    }
     
-    toggleComments(): void {
+    
+    toggleComments(commentId:string): void {
       this.showComments = !this.showComments;
+      this.loadReplies(commentId)
     }
     onLikePost(): void {
       // Increment the like count

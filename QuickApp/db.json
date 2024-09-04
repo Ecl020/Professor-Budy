@@ -1,4 +1,24 @@
 {
+  "replies": [
+    {
+      "id": "YaGLmqraPljIEhivfgql",
+      "commentId": "4fRgDeYtHVGs0HrNPizD",
+      "reply": "hey cory",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T10:30:24.003Z"
+    },
+    {
+      "id": "a5ZY8sTOtNzrj4PBHMWk",
+      "commentId": "4fRgDeYtHVGs0HrNPizD",
+      "reply": "hey how are you",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T10:56:56.290Z"
+    }
+  ],
   "comments": [
     {
       "id": "Djo0ANaibN3Gx0ZQjF3J",
@@ -44,6 +64,33 @@
       "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
       "userName": "cory strickland",
       "createdAt": "2024-09-04T09:11:13.371Z"
+    },
+    {
+      "id": "lesbisrm3ejukc90qOPl",
+      "postId": "GiPDc8DEnpkYJvo40GHC",
+      "comment": "Im not eric but i can see",
+      "imageUrl": null,
+      "userId": "f7rj60ILDWdxoNlB7ID9rg0ynmm1",
+      "userName": "Test6",
+      "createdAt": "2024-09-04T09:42:16.301Z"
+    },
+    {
+      "id": "4fRgDeYtHVGs0HrNPizD",
+      "postId": "XfOmww6lEINCGZ0CglNT",
+      "comment": "hey guys",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T10:02:45.568Z"
+    },
+    {
+      "id": "qgxstDSnL6AmUVv6xJfy",
+      "postId": "nWmhk6RrCH8fqmSErjOb",
+      "comment": "hello cory",
+      "imageUrl": null,
+      "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
+      "userName": "cory strickland",
+      "createdAt": "2024-09-04T10:31:27.772Z"
     }
   ],
   "posts": [
@@ -412,7 +459,7 @@
       "userId": "SPgqz9Sj3zczxZogBPi1Tvgtwo53",
       "userName": "cory strickland",
       "createdAt": "2024-09-04T09:22:01.480Z",
-      "likesCount": 11
+      "likesCount": 15
     }
   ]
 }

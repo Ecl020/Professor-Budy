@@ -15,4 +15,14 @@ export interface CommentData {
   userName: string;
   comment: string;
   createdAt: Date;
+  replies?: ReplyData[];
+}
+
+
+export interface ReplyData {
+  id: string;
+  userId: string;
+  userName: string;
+  reply: string;
+  createdAt: Date;
 }
