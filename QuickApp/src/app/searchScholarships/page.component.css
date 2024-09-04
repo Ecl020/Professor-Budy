@@ -1,0 +1,112 @@
+.page-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 60px; /* Adjust if the navbar height changes */
+  }
+
+  .interest-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .interest-picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between categories */
+    margin-bottom: 20px;
+  }
+
+  .category {
+    flex: 1 1 calc(33.333% - 20px); /* Adjust the percentage to fit more or fewer categories per row */
+    box-sizing: border-box;
+  }
+
+  .category-title {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+  }
+
+  .interests-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between interest bubbles */
+  }
+
+  .interests-list label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: #d0e7ff; /* Light bluish color */
+    color: #333;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-size: 0.9em; /* Smaller font size */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Light shadow */
+  }
+
+  .interests-list input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  .interests-list label.checked {
+    background-color: #4CAF50; /* Change to your preferred color */
+    color: #fff;
+  }
+
+  .additional-info {
+    margin-top: 20px;
+    flex: 1 1 100%; /* Make it span full width */
+    box-sizing: border-box;
+  }
+
+  .additional-info .category {
+    margin: 0; /* Remove default margin */
+  }
+
+  .input-group {
+    margin-bottom: 10px;
+  }
+
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .input-group input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .submit-container {
+    display: flex;
+    justify-content: flex-end; /* Align submit button to the right */
+    margin-top: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .bot-response {
+    margin-top: 20px;
+  }
+
+  .bot-response h4 {
+    margin: 0 0 10px;
+  }
+  

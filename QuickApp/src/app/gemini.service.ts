@@ -32,6 +32,16 @@ export class GeminiService {
     })
     return text
   }
+  async generatePreMadeText(prompt:string){
+    const model = this.generativeAi.getGenerativeModel({model: 'gemini-pro'});
+    const result = await model.generateContent(prompt);
+
+    const response = await result.response;
+
+    const text = response.text();
+ 
+    return text
+  }
   async generateTextJson(prompt: string): Promise<any> {
     const model = this.generativeAi.getGenerativeModel({ model: 'gemini-pro' });
 

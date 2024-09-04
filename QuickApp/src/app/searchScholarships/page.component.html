@@ -1,0 +1,50 @@
+<div class="page-content">
+  <!-- Interest Picker -->
+  <div class="interest-container">
+    <!-- Interest Picker -->
+    <div class="interest-picker">
+      <div class="category" *ngFor="let category of categorizedInterests">
+        <h3 class="category-title">{{ category.name }}</h3>
+        <div class="interests-list">
+          <label *ngFor="let interest of category.interests">
+            <input 
+              type="checkbox" 
+              [value]="interest" 
+              (change)="onInterestChange($event, interest)" 
+            />
+            {{ interest }}
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Information -->
+    <div class="additional-info">
+      <h2>Additional Information</h2>
+      <div class="category">
+        <div class="input-group">
+          <label for="school">School:</label>
+          <input 
+            id="school" 
+            type="text" 
+            [(ngModel)]="school" 
+            placeholder="Enter your school" 
+          />
+        </div>
+      </div>
+    </div>
+    
+    <div class="submit-container">
+      <button (click)="sendInterestData()">Submit Interests</button>
+    </div>
+
+    <div class="bot-response">
+      <ng-container *ngIf="loading">
+        <p class="title speech-bubble-text">thinking...</p>
+    </ng-container>
+      <h4>Bot's Response:</h4>
+      <p>{{ premadResponse }}</p>
+    </div>
+  </div>
+
+  

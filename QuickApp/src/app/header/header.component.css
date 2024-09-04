@@ -24,6 +24,20 @@ nav .wrapper{
   align-items: center;
   justify-content: space-between;
 }
+
+.wrapper .login-button {
+  margin-left: auto; /* Pushes the login button to the right */
+  color: #fff; /* Ensures text color is white */
+  padding: 10px 20px; /* Adjust padding as needed */
+  text-decoration: none; /* Removes underline from link */
+  background-color: #007bff; /* Button background color */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.wrapper .login-button:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
 .wrapper .logo a{
   color: #f2f2f2;
   font-size: 30px;
@@ -61,6 +75,16 @@ nav .wrapper{
   visibility: hidden;
   box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
+.nav-links .profile-title {
+  color: #fff; /* White color for text */
+  font-size: 22px; /* Font size */
+  font-weight: 600; /* Bold text */
+  margin-left: 20px; /* Space from other elements */
+  padding: 10px 15px; /* Padding for spacing */
+
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
 .nav-links li:hover .drop-menu,
 .nav-links li:hover .mega-box{
   transition: all 0.3s ease;
@@ -135,6 +159,7 @@ nav .wrapper{
   top: 10px;
 }
 
+
 @media screen and (max-width: 970px) {
   .wrapper .btn{
     display: block;
@@ -197,9 +222,10 @@ nav .wrapper{
   #showMega:checked ~ .mega-box{
     max-height: 100%;
   }
-  .nav-links .desktop-item{
-    display: none;
+  .nav-links li a.desktop-item {
+    display: none; /* or display: none !important; */
   }
+
   .nav-links .mobile-item{
     display: block;
     color: #f2f2f2;
@@ -255,6 +281,7 @@ nav .wrapper{
     font-size: 19px;
   }
 }
+
 nav input{
   display: none;
 }

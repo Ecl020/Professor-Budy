@@ -1,0 +1,34 @@
+<button type="button" class="icon-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <i class="fa fa-plus"></i>
+  </button>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+            <mat-card>
+                <mat-card-header>
+                  <mat-card-title>Create Post</mat-card-title>
+                </mat-card-header>
+                <div>
+                  <textarea matInput #commentInput placeholder="Type Message..."></textarea>
+                </div>
+                <!-- <div *ngIf="selectedImageFile" id="post-preview">
+                    <img id="post-preview-image"/>
+                </div> -->
+                <mat-card-actions align="end">
+                  <!-- <button mat-button color="primary">
+                    <label for="photo-upload" style="cursor: pointer;">
+                      <input #photoSelector (change)="PhotoSelected(photoSelector)" id="photo-upload" type="file" accept="image/*" />
+                      <mat-icon>insert_photo</mat-icon>
+                    </label>
+                  </button> -->
+                  <button (click)="PostClick(commentInput)" color="primary">Post</button>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
