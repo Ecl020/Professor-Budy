@@ -65,7 +65,7 @@
   align-items: center; /* Align icons vertically */
   margin-top: 10px;
   margin-bottom: 10px;
-  padding-left: 16px; /* Moves the icons to the left of the card */
+  
 }
 
 /* Each action */
@@ -76,7 +76,7 @@
   color: #757575;
   cursor: pointer;
   transition: color 0.3s ease;
-  margin-right: 20px; /* Reduces the space between icons */
+  margin-right: 5px; /* Reduces the space between icons */
 }
 
 .action i {
@@ -111,7 +111,7 @@
 .like-count {
   font-size: 14px;
   color: #757575;
-  margin-left: 16px; /* Aligns the like count with the action icons */
+ 
   margin-top: 5px; /* Adds a small gap between the actions and the like count */
 }
 .comment-text {
