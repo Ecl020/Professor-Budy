@@ -1,0 +1,76 @@
+{
+    "scholarships": [
+      {
+        "id": "sch001",
+        "name": "National Merit Scholarship",
+        "amount": 2500,
+        "deadline": "2024-10-15",
+        "eligibility": {
+          "gpa_min": 3.5,
+          "year": "Senior",
+          "major": ["Engineering", "Computer Science"]
+        },
+        "application_link": "https://example.com/national-merit",
+        "description": "Awarded to outstanding high school seniors based on academic achievement and standardized test scores."
+      },
+      {
+        "id": "sch002",
+        "name": "Community Service Grant",
+        "amount": 1500,
+        "deadline": "2024-11-01",
+        "eligibility": {
+          "gpa_min": 3.0,
+          "year": "Undergraduate",
+          "major": ["Social Work", "Non-Profit Management"],
+          "criteria": {
+            "community_service_hours": 100
+          }
+        },
+        "application_link": "https://example.com/community-service",
+        "description": "Provides funding for students involved in significant community service projects."
+      },
+      {
+        "id": "sch003",
+        "name": "STEM Excellence Award",
+        "amount": 3000,
+        "deadline": "2024-12-01",
+        "eligibility": {
+          "gpa_min": 3.7,
+          "year": "Graduate",
+          "major": ["Mathematics", "Physics", "Biology"]
+        },
+        "application_link": "https://example.com/stem-excellence",
+        "description": "For graduate students pursuing advanced degrees in STEM fields who have demonstrated exceptional research capabilities."
+      },
+      {
+        "id": "sch004",
+        "name": "Arts and Humanities Scholarship",
+        "amount": 2000,
+        "deadline": "2024-09-30",
+        "eligibility": {
+          "gpa_min": 3.2,
+          "year": "Undergraduate",
+          "major": ["Literature", "History", "Philosophy"]
+        },
+        "application_link": "https://example.com/arts-humanities",
+        "description": "Supports undergraduate students majoring in Arts and Humanities with a passion for creative and intellectual exploration."
+      },
+      {
+        "id": "sch005",
+        "name": "Global Citizenship Award",
+        "amount": 5000,
+        "deadline": "2024-10-31",
+        "eligibility": {
+          "gpa_min": 3.5,
+          "year": "Senior",
+          "major": ["International Relations", "Global Studies"],
+          "criteria": {
+            "international_experience": true
+          }
+        },
+        "application_link": "https://example.com/global-citizenship",
+        "description": "For students with international experience who demonstrate a commitment to global issues and cross-cultural understanding."
+      }
+    ]
+  }
+  

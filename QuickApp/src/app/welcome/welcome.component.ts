@@ -29,4 +29,8 @@ export class WelcomeComponent implements OnInit {
   navigateToHome() {
     this.router.navigate(['/home']);
   }
+  
+  navigateToScholarships(){
+    this.router.navigate(['scholarship'])
+  }
 }
