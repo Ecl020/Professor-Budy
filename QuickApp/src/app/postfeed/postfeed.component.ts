@@ -16,7 +16,7 @@ export class PostfeedComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.fetchPosts();
+    // this.fetchPosts();
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -31,7 +31,7 @@ export class PostfeedComponent implements OnInit {
 
     // Load more posts when scrolled near the bottom
     if (scrollTop + clientHeight >= scrollHeight - 50 && !this.isLoading) {
-      this.fetchPosts();
+      // this.fetchPosts();
     }
   }
 
