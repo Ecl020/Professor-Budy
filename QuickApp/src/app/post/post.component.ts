@@ -173,9 +173,9 @@ export class PostComponent implements OnInit{
     }
     
     
-    toggleComments(commentId:string): void {
+    toggleComments(): void {
       this.showComments = !this.showComments;
-      this.loadReplies(commentId)
+    
     }
     onLikePost(): void {
       // Increment the like count

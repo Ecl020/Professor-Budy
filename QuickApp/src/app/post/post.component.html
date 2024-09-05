@@ -25,11 +25,10 @@
       
       <!-- Section to view comments -->
       <div class="comments-section">
-        <div *ngFor="let comment of comments" class="comment">
-        <p class="view-comments-text" (click)="toggleComments(comment.id)">
+      
+        <p class="view-comments-text" (click)="toggleComments()">
           {{ showComments ? 'hide comments..' : 'view all ' + (postData.comments?.length ?? 0) + ' comments..' }}
         </p>
-        </div>
         
         <!-- Comments are only shown when showComments is true -->
         <div *ngIf="showComments">
