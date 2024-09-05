@@ -55,40 +55,56 @@
 
 .home-container {
     display: flex;
+    gap: 20px; /* Space between left and right containers */
     margin-top: 20px;
-    gap: 20px;
 }
 
 .left-container {
-    height: 400px;
     display: flex;
+    flex-direction: column; /* Stack top and bottom containers vertically */
     flex: 1;
-    background-color: #2b2d42;
-    padding: 20px;
-    border-radius: 15px;
-    border: 2px solid #4c4e50; 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
-    flex-direction: column;
-    justify-content: center; /* Center-align content horizontally */
-    align-items: flex-start; 
-    gap: 10px; /* Add space between elements */
 }
 
-.left-container h2 {
+.left-top-container {
+    background-color: #2b2d42;
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid #4c4e50;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.left-top-container {
+    margin-bottom: 20px; /* Adds space between top and bottom containers */
+}
+
+.left-top-container h2 {
     font-size: 32px;
     color: #ffffff;
-    margin: 10px 0; 
+    margin: 10px 0;
 }
 
-.left-container .subtitle {
+.left-top-container .subtitle {
     font-size: 18px;
     color: #dddddd;
 }
 
-.left-container .logo {
+.left-top-container .logo {
     width: 80px;
     height: auto;
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
+}
+
+.left-bottom-container {
+    padding: 10px; /* Optional padding */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    height: 400px; /* Set a specific height for the container */
+}
+.left-bottom-container .logo {
+    width: 300px; /* Set the width of the image */
+    height: auto; /* Maintain aspect ratio */
+   
 }
 
 .cta-button {
@@ -107,16 +123,29 @@
     background-color: #0056b3;
     transform: scale(1.05);
 }
+.image-container {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center; /* Center-align content horizontally */
+    align-items: flex-start; 
+    gap: 10px; /* Add space between elements */
+}
 
+.underneath-image {
+    width: 100px; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
 .right-container {
-    flex: 2;
+    flex: 2; /* Takes up more space than the left container */
     background-color: #2b2d42;
     padding: 20px;
     border-radius: 15px;
-    border: 2px solid #4c4e50; 
-    
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
-    
+    border: 2px solid #4c4e50;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 video {
