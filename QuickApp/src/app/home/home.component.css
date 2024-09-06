@@ -18,7 +18,7 @@
 
 .news-ticker {
     display: inline-block;
-    animation: scroll 25s linear infinite;
+    animation: scroll 30s linear infinite;
  
 }
 
@@ -103,7 +103,7 @@
 }
 .left-bottom-container .logo {
     width: 300px; /* Set the width of the image */
-    height: auto; /* Maintain aspect ratio */
+    height: 650px; /* Maintain aspect ratio */
    
 }
 
