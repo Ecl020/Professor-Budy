@@ -19,6 +19,14 @@
             </div>
             <div *ngIf="isRegisterState()">
                 <div class="form-holder">
+                    <span class="fas fa-user"></span>
+                    <input class="form-control" #registerUsername placeholder="Username" type="text">
+                </div>
+                <div class="form-holder">
+                    <span class="fas fa-birthday-cake"></span>
+                    <input class="form-control" #registerBirthday placeholder="Birthday" type="date">
+                </div>
+                <div class="form-holder">
                     <span class="fas fa-envelope"></span> <!-- Font Awesome envelope icon -->
                     <input class="form-control" type="text" #registerEmail placeholder="Email">
                 </div>

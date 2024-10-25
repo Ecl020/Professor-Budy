@@ -1,5 +1,8 @@
 import { Component, inject, OnInit} from '@angular/core';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
+import { doc, getFirestore, setDoc } from 'firebase/firestore';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-auth',
@@ -7,6 +10,11 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, se
   styleUrl: './auth.component.css'
 })
 export class AuthComponent implements OnInit {
+  private firestore = getFirestore();
+  username: string = '';
+  birthday: string = '';
+  location: string = '';
+  userid: string = '';
 
   state = AuthenticatorCompState.LOGIN;
 
@@ -61,17 +69,30 @@ export class AuthComponent implements OnInit {
   onRegister(){
     this.state = AuthenticatorCompState.REGISTER;
   }
-  async registerUser(registerEmail: HTMLInputElement,registerPassword:HTMLInputElement,registerConfirmPassword: HTMLInputElement) {
+  async registerUser(registerEmail: HTMLInputElement,registerPassword:HTMLInputElement,registerConfirmPassword: HTMLInputElement,registerUsername: HTMLInputElement,
+    registerBirthday: HTMLInputElement,) {
 
     const auth = getAuth();
     let email = registerEmail.value;
     let password = registerPassword.value
     let confirmPassword = registerConfirmPassword.value
+    this.username = registerUsername.value;
+    this.birthday = registerBirthday.value;
     if(this.isNotEmpty(email) && this.isNotEmpty(password)&& this.isNotEmpty(confirmPassword)&&this.isAMatch(password,confirmPassword)){
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email,password);
-      const user = userCredential.user;
-      console.log('User registered:', user);
+      createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        this.userid = user.uid;
+        console.log('User created successfully:', user);
+        this.createUserProfile();
+        Swal.fire('Success', 'Account created successfully!', 'success'); // Success alert
+
+      })
+      .catch((error) => {
+        console.error('Error creating user:', error.message);
+        Swal.fire('Error', `Error creating account: ${error.message}`, 'error'); // Error alert
+      });
     } catch (error) {
       if (error instanceof Error) {
         // Using type assertion to handle 'unknown' type
@@ -81,6 +102,26 @@ export class AuthComponent implements OnInit {
       }
     }
   }
+  }
+
+  async createUserProfile() {
+    const docRef = doc(this.firestore, 'users', this.userid);
+
+    const userProfileData = {
+      username: this.username,
+      birthday: this.birthday,
+      location: this.location,
+    };
+
+    await setDoc(docRef, userProfileData)
+      .then(() => {
+        console.log('Profile created successfully in Firestore');
+        Swal.fire('Success', 'Profile saved successfully!', 'success'); // Success alert
+      })
+      .catch(error => {
+        console.error('Error creating profile in Firestore:', error.message);
+        Swal.fire('Error', `Error saving profile: ${error.message}`, 'error'); // Error alert
+      });
   }
 
   isLoginState(){
