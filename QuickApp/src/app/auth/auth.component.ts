@@ -70,14 +70,13 @@ export class AuthComponent implements OnInit {
     this.state = AuthenticatorCompState.REGISTER;
   }
   async registerUser(registerEmail: HTMLInputElement,registerPassword:HTMLInputElement,registerConfirmPassword: HTMLInputElement,registerUsername: HTMLInputElement,
-    registerBirthday: HTMLInputElement,) {
+    ) {
 
     const auth = getAuth();
     let email = registerEmail.value;
     let password = registerPassword.value
     let confirmPassword = registerConfirmPassword.value
     this.username = registerUsername.value;
-    this.birthday = registerBirthday.value;
     if(this.isNotEmpty(email) && this.isNotEmpty(password)&& this.isNotEmpty(confirmPassword)&&this.isAMatch(password,confirmPassword)){
     try {
       createUserWithEmailAndPassword(auth, email, password)
@@ -109,8 +108,6 @@ export class AuthComponent implements OnInit {
 
     const userProfileData = {
       username: this.username,
-      birthday: this.birthday,
-      location: this.location,
     };
 
     await setDoc(docRef, userProfileData)
