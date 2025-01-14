@@ -16,7 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import {getAuth} from 'firebase/auth'
 import { environment } from '../environments/environment.development';
-import { AuthComponent } from './auth/auth.component';
+
 import { EmailVerifiedComponent } from './email-verified/email-verified.component';
 import { ProfileCreatorComponent } from './profile-creator/profile-creator.component';
 import { CreatePostComponent } from './create-post/create-post.component';
@@ -33,7 +33,6 @@ import { QuillModule } from 'ngx-quill';
     PageComponent,
     ChatBotComponent,
     HomeComponent,
-    AuthComponent,
     EmailVerifiedComponent,
     ProfileCreatorComponent,
     CreatePostComponent,

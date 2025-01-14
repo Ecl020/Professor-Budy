@@ -1,6 +1,6 @@
 export const environment = {
     production: false,
-    googleGenerativeAIKey: 'AIzaSyDG0iI-QLx7R_CABNdTWKajzFR4Kr6CjA0',
+    googleGenerativeAIKey: 'AIzaSyCPJboferRXpnXL5tK5LR22sImvZgRDLfc',
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     firebaseConfig:{
     apiKey: "AIzaSyCCGkwMka0bKUz-qfzOvkiz58gCcrHIKlM",
